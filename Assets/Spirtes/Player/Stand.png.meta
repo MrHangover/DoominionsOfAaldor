@@ -1,0 +1,315 @@
+fileFormatVersion: 2
+guid: 541fe2dfeb4161b45a230ef5a8820c68
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Stand_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 781
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_1
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 781
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_2
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 781
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_3
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 781
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_4
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 781
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_5
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 781
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_6
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 781
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_7
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 781
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_8
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 781
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 538
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_10
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 538
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_11
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 538
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_12
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 538
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_13
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 538
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_14
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 538
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_15
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 538
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_16
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 538
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_17
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 538
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 295
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_19
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 295
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_20
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 295
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_21
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 295
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_22
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 295
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_23
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 295
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_24
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 295
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_25
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 295
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_26
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 295
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 52
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_28
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 52
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Stand_29
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 52
+        width: 103
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
