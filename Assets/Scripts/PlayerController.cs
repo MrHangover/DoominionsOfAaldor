@@ -5,15 +5,13 @@ public class PlayerController : MonoBehaviour {
 
 	public float maxSpeed = 10f;
 	bool facingRight = true;
-
-	Animator anim;
+	
 
 
 
 	// Use this for initialization
 	void Start () 
 	{
-		anim = GetComponent<Animator>();
 
 	}
 	
@@ -33,8 +31,9 @@ public class PlayerController : MonoBehaviour {
 		float moveH = Input.GetAxis ("Horizontal");
 		float moveV = Input.GetAxis ("Vertical");
 
-		anim.SetFloat("vSpeed", Mathf.Abs(moveV));
-		anim.SetFloat("hSpeed", Mathf.Abs(moveH));
+
+
+
 
 		rigidbody2D.velocity = new Vector2(moveV * maxSpeed, rigidbody2D.velocity.y);
 
