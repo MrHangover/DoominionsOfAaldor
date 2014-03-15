@@ -23,7 +23,7 @@ public class EnemyArea : MonoBehaviour {
 	
 	void OnTriggerStay2D (Collider2D other)
 	{
-		if(other.gameObject.name == "Player")
+		if(other.gameObject.tag == "Player")
 		{
 
 			if(Combat == false)
@@ -36,7 +36,7 @@ public class EnemyArea : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D other)
 	{
-		if(other.gameObject.name == "Player")
+		if(other.gameObject.tag == "Player")
 		{
 			Combat = true;
 			
@@ -45,11 +45,10 @@ public class EnemyArea : MonoBehaviour {
 
 	void OnCollisionExit2D (Collision2D other)
 	{
-		if(other.gameObject.name == "Player")
+		if(other.gameObject.tag == "Player")
 		{
 			Combat = false;
 			
 		}
 	}
-
 }
