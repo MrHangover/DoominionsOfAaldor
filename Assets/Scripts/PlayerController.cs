@@ -5,7 +5,8 @@ public class PlayerController : MonoBehaviour {
 
 	public float maxSpeed = 10f;
 	bool facingRight = true;
-	
+	public bool canMove = true;
+	float moveTimer = 0.3f;
 
 
 
@@ -34,22 +35,31 @@ public class PlayerController : MonoBehaviour {
 
 
 
-
-		rigidbody2D.velocity = new Vector2(moveV * maxSpeed, rigidbody2D.velocity.y);
-
-		rigidbody2D.velocity = new Vector2(moveH * maxSpeed, rigidbody2D.velocity.x);
+		if(canMove){
+			rigidbody2D.velocity = new Vector2(moveV * maxSpeed, rigidbody2D.velocity.y);
+			rigidbody2D.velocity = new Vector2(moveH * maxSpeed, rigidbody2D.velocity.x);
+		}
 
 		if(moveH > 0 && !facingRight)
 			Flip();
 		else if(moveH < 0 && facingRight)
 			Flip();
 
-
+		if(canMove == false)
+			moveTimer -= Time.deltaTime;
+		if(moveTimer < 0f){
+			canMove = true;
+			moveTimer = 0.3f;
+		}
 	}
 
 	void Update ()
 	{
 
+	}
+
+	void OnCollisionEnter2D(Collision2D other){
+		canMove = false;
 	}
 
 	void Flip()
