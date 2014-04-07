@@ -45,8 +45,12 @@ public class Patchi : MonoBehaviour {
 
 		if(Input.GetButtonDown("Fire1"))
 		{
-			GameObject Cake = Instantiate(AttackCake, AttackCakePos.position, AttackCakePos.rotation) as GameObject;
-			CDAttackCake();
+
+			if(AttackCakeCD < Time.time)
+			{
+				GameObject Cake = Instantiate(AttackCake, AttackCakePos.position, AttackCakePos.rotation) as GameObject;
+				CDAttackCake();
+			}
 		}
 
 		if(Input.GetKeyDown(KeyCode.Alpha1))
@@ -96,7 +100,7 @@ public class Patchi : MonoBehaviour {
 
 
 	void CDAttackCake() {
-		AttackCakeCD = 1.0f + Time.time;
+		AttackCakeCD = 0.5f + Time.time;
 
 		return;
 	}
