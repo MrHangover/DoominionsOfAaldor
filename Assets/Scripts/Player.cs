@@ -7,7 +7,7 @@ public abstract class Player : MonoBehaviour {
 	bool facingRight = true;
 	bool canMove = true;
 	float moveTimer = 0.3f;
-	int health = 100;
+	protected int health = 100;
 	public bool Speech;
 
 	Player(float mSpeed, int hp){
@@ -51,7 +51,7 @@ public abstract class Player : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
-		canMove = false;
+
 	}
 
 	void Flip()
@@ -74,19 +74,19 @@ public abstract class Player : MonoBehaviour {
 
 	}
 
-	void OffensiveAbility(){
+	abstract void OffensiveAbility(){
 
 	}
 
-	void DefensiveAbility(){
+	abstract void DefensiveAbility(){
 
 	}
 
-	void MovementAbility(){
+	abstract void MovementAbility(){
 
 	}
 
-	void UltAbility(){
+	abstract void UltAbility(){
 
 	}
 
