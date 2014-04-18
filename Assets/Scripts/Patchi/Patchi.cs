@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class Patchi : Player {
-
-	public GameObject PlayerP;
+	
 
 	float DefBallCD = 0;
 	float AttackCakeCD = 0;
@@ -35,11 +34,10 @@ public class Patchi : Player {
 	// Update is called once per frame
 	void Update () {
 	
-		PlayerController script = PlayerP.GetComponent<Player>();
 
 		if(SpeedTime < Time.time && UltTime < Time.time )
 		{
-			PlayerController.maxSpeed = 5f;
+			maxSpeed = 5f;
 		}
 
 
@@ -58,7 +56,7 @@ public class Patchi : Player {
 
 			if(SpeedCD < Time.time && UltTime < Time.time)
 			{
-				PlayerController.maxSpeed = 15f;
+				maxSpeed = 15f;
 				SpeedTimer();
 				CDSpeed();
 			}
@@ -90,7 +88,7 @@ public class Patchi : Player {
 		{
 			if (UltCD < Time.time)
 			{
-				PlayerController.maxSpeed = 0f;
+				maxSpeed = 0f;
 				GameObject Ult = Instantiate(Nova, NovaPos.position, NovaPos.rotation) as GameObject;
 				CDUlt();
 				UltTimer();

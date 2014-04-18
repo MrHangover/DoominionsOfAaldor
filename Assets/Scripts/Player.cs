@@ -3,16 +3,14 @@ using System.Collections;
 
 public abstract class Player : MonoBehaviour {
 
-	float maxSpeed;
-	bool facingRight = true;
+	protected float maxSpeed;
+	public static bool facingRight = true;
 	bool canMove = true;
 	float moveTimer = 0.3f;
 	int health = 100;
 	public bool Speech;
 
-	Player(float mSpeed, int hp){
-		health = hp;
-	}
+
 
 	// Use this for initialization
 	void Start () 
@@ -23,11 +21,10 @@ public abstract class Player : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
-		if(!Speech)
-		{
-			float moveH = Input.GetAxis ("Horizontal");
-			float moveV = Input.GetAxis ("Vertical");
-		}
+
+		float moveH = Input.GetAxis ("Horizontal");
+		float moveV = Input.GetAxis ("Vertical");
+
 
 		if(canMove){
 				rigidbody2D.velocity = new Vector2(moveV * maxSpeed, rigidbody2D.velocity.y);
