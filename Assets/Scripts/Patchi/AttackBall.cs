@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AttackBall : MonoBehaviour {
 
-	public GameObject Player;
+	public GameObject PlayerP;
 	Animator ABall;
 
 	float BounceCD = 0f;
@@ -20,14 +20,14 @@ public class AttackBall : MonoBehaviour {
 
 
 
-		if(PlayerController.facingRight == true)
+		if(Player.facingRight == true)
 		{
 			rigidbody2D.velocity = new Vector2(10,-5);
 		
 		}
 
 		
-		if(PlayerController.facingRight == false)
+		if(Player.facingRight == false)
 		{
 			rigidbody2D.velocity = new Vector2(10*-1,-5);
 		}
@@ -37,7 +37,7 @@ public class AttackBall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		PlayerController script = Player.GetComponent<Player>();
+		Player script = PlayerP.GetComponent<Player>();
 
 
 			

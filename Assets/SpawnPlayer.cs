@@ -3,13 +3,13 @@ using System.Collections;
 
 public class SpawnPlayer : MonoBehaviour {
 
-	public GameObject Player;
+	public GameObject PlayerP;
 	public Transform SpawnPos;
 	private Player test;
 
 	// Use this for initialization
 	void Start () {
-		GameObject Spawn = Instantiate(Player, SpawnPos.position, SpawnPos.rotation) as GameObject;
+		GameObject Spawn = Instantiate(PlayerP, SpawnPos.position, SpawnPos.rotation) as GameObject;
 
 
 	}
