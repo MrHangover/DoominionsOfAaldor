@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Patchi : Player {
 	
+	Animator AnimBody;
 
 	float DefBallCD = 0;
 	float AttackCakeCD = 0;
@@ -28,12 +29,15 @@ public class Patchi : Player {
 	// Use this for initialization
 	void Start () {
 
+		AnimBody = GetComponent<Animator>();
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+		AnimBody.SetFloat("moveV", Mathf.Abs(moveV));
+		AnimBody.SetFloat("moveH", Mathf.Abs(moveH));
 
 		if(SpeedTime < Time.time && UltTime < Time.time )
 		{
