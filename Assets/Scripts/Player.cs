@@ -74,21 +74,13 @@ public abstract class Player : MonoBehaviour {
 
 	}
 
-	abstract void OffensiveAbility(){
+	protected abstract void OffensiveAbility();
 
-	}
+	protected abstract void DefensiveAbility();
 
-	abstract void DefensiveAbility(){
+	protected abstract void MovementAbility();
 
-	}
-
-	abstract void MovementAbility(){
-
-	}
-
-	abstract void UltAbility(){
-
-	}
+	protected abstract void UltAbility();
 
 	public void Speechset() {
 		Speech = true;
