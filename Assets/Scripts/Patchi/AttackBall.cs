@@ -5,7 +5,7 @@ public class AttackBall : MonoBehaviour {
 
 	public GameObject PlayerP;
 	Animator ABall;
-
+	Vector2 vel;
 	float BounceCD = 0f;
 	float BounceReturnCD = 0f;
 
@@ -20,7 +20,7 @@ public class AttackBall : MonoBehaviour {
 
 
 
-		if(Player.facingRight == true)
+		/*if(Player.facingRight == true)
 		{
 			rigidbody2D.velocity = new Vector2(10,-5);
 		
@@ -30,7 +30,9 @@ public class AttackBall : MonoBehaviour {
 		if(Player.facingRight == false)
 		{
 			rigidbody2D.velocity = new Vector2(10*-1,-5);
-		}
+		}*/
+
+		rigidbody2D.velocity = vel*10;
 
 	}
 	

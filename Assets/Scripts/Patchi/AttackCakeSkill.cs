@@ -12,7 +12,7 @@ public class AttackCakeSkill : MonoBehaviour {
 
 		Player script = PlayerP.GetComponent<Player>();
 		
-		if(Player.facingRight == true)
+		/*if(Player.facingRight == true)
 		{
 			rigidbody2D.velocity = new Vector2(20,0);
 		}
@@ -20,7 +20,7 @@ public class AttackCakeSkill : MonoBehaviour {
 		if(Player.facingRight == false)
 		{
 			rigidbody2D.velocity = new Vector2(20*-1,0);
-		}
+		}*/
 	}
 	
 	// Update is called once per frame

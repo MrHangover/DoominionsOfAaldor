@@ -9,9 +9,8 @@ public abstract class Player : MonoBehaviour {
 	float moveTimer = 0.3f;
 	protected int health = 100;
 	public bool Speech;
-
-
-
+	protected float moveH;
+	protected float moveV;
 	// Use this for initialization
 	void Start () 
 	{
@@ -22,8 +21,8 @@ public abstract class Player : MonoBehaviour {
 	void FixedUpdate ()
 	{
 
-		float moveH = Input.GetAxis ("Horizontal");
-		float moveV = Input.GetAxis ("Vertical");
+		moveH = Input.GetAxis ("Horizontal");
+		moveV = Input.GetAxis ("Vertical");
 
 
 		if(canMove){
@@ -36,10 +35,9 @@ public abstract class Player : MonoBehaviour {
 			rigidbody2D.velocity = new Vector2 (0,0);
 		}
 
-		if(moveH > 0 && !facingRight)
-			Flip();
-		else if(moveH < 0 && facingRight)
-			Flip();
+		if(moveH != 0 || moveV != 0){
+			transform.eulerAngles = new Vector3(0f, 0f, Mathf.Atan2(moveV, moveH) * (180f / Mathf.PI));
+		}
 	}
 
 	void Update ()
