@@ -139,4 +139,20 @@ public class Patchi : Player {
 		return;
 	}
 
+	protected override void OffensiveAbility(){
+
+	}
+	
+	protected override void DefensiveAbility(){
+
+	}
+	
+	protected override void MovementAbility(){
+
+	}
+	
+	protected override void UltAbility(){
+
+	}
+
 }
