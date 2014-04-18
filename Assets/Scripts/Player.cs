@@ -36,7 +36,9 @@ public abstract class Player : MonoBehaviour {
 		}
 
 		if(moveH != 0 || moveV != 0){
-			transform.eulerAngles = new Vector3(0f, 0f, Mathf.Atan2(moveV, moveH) * (180f / Mathf.PI));
+			transform.eulerAngles = new Vector3(0f, 0f, Mathf.Atan2(moveV, moveH) * (180f / Mathf.PI) - 90);
+			if(transform.eulerAngles.z < 360)
+				transform.eulerAngles = new Vector3(0f, 0f, transform.eulerAngles.z + 360);
 		}
 	}
 
