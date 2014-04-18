@@ -11,10 +11,10 @@ public class IceShard : MonoBehaviour {
 		Player script = PlayerF.GetComponent<Player>(); //Change to PlayerF
 		
 		if(Player.facingRight==true){
-			rigidbody2D.velocity = newVector2(20,0);
+			rigidbody2D.velocity = new Vector2(20,0);
 		}
-		if(Player.facingLeft==true){
-			rigidbody2D.velocity = newVector2(20*-1,0);
+		/*if(Player.facingLeft==true){
+			rigidbody2D.velocity = new Vector2(20*-1,0);
 		}
 		/*	if (Player.facingUp==true){
 		 	rigidbody2d.velocity = newVector2(0,20);
