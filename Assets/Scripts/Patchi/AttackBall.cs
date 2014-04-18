@@ -37,7 +37,7 @@ public class AttackBall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		PlayerController script = Player.GetComponent<PlayerController>();
+		PlayerController script = Player.GetComponent<Player>();
 
 
 			

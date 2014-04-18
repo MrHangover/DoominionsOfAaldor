@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Patchi : MonoBehaviour {
+public class Patchi : Player {
 
-	public GameObject Player;
+	public GameObject PlayerP;
 
 	float DefBallCD = 0;
 	float AttackCakeCD = 0;
@@ -35,7 +35,7 @@ public class Patchi : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		PlayerController script = Player.GetComponent<PlayerController>();
+		PlayerController script = PlayerP.GetComponent<Player>();
 
 		if(SpeedTime < Time.time && UltTime < Time.time )
 		{

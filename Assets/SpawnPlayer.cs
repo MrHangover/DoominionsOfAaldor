@@ -5,7 +5,7 @@ public class SpawnPlayer : MonoBehaviour {
 
 	public GameObject Player;
 	public Transform SpawnPos;
-	private PlayerController test;
+	private Player test;
 
 	// Use this for initialization
 	void Start () {
