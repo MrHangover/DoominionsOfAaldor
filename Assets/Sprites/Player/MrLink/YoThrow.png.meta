@@ -24,18 +24,18 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 60
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings:
@@ -44,6 +44,168 @@ TextureImporter:
     textureFormat: -2
     compressionQuality: 50
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: YoThrow_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_2
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_3
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_4
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_5
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_6
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_7
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_8
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_9
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_10
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_11
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_12
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_13
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_14
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_15
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_16
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: YoThrow_17
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 0
+        width: 13
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 

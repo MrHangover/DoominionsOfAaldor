@@ -142,6 +142,10 @@ public class Patchi : Player {
 		return;
 	}
 
+	protected override void NormalAttack(){
+
+	}
+
 	protected override void OffensiveAbility(){
 
 	}

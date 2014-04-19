@@ -3,14 +3,21 @@ using System.Collections;
 
 public abstract class Player : MonoBehaviour {
 
-	protected float maxSpeed;
 	public static bool facingRight = true;
-	bool canMove = true;
-	float moveTimer = 0.3f;
-	protected int health = 100;
 	public bool Speech;
 	protected float moveH;
 	protected float moveV;
+	protected float maxSpeed;
+	protected int health;
+	protected int maxHealth;
+	protected float normalCD = 0f;
+	protected float offensiveCD = 0f;
+	protected float speedCD = 0f;
+	protected float defensiveCD = 0f;
+	protected float ultCD;
+	bool canMove = true;
+	float moveTimer = 0.3f;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -44,23 +51,26 @@ public abstract class Player : MonoBehaviour {
 
 	void Update ()
 	{
-
+		if(Input.GetButton("Normal"))
+			NormalAttack();
+		if(Input.GetButton("Offensive"))
+			OffensiveAbility();
+		if(Input.GetButton("Defensive"))
+			DefensiveAbility();
+		if(Input.GetButton("Speed"))
+			MovementAbility();
+		if(Input.GetButton("Ult"))
+			UltAbility();
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
 
 	}
 
-	void Flip()
-	{
-		facingRight = !facingRight;
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
-	}
-
 	public void TakeDamage(int damage){
 		health -= damage;
+		if(health > maxHealth)
+			health = maxHealth;
 	}
 
 	public void KnockBack(Vector2 direction, float force){
@@ -70,6 +80,8 @@ public abstract class Player : MonoBehaviour {
 	public void Stun(float duration){
 
 	}
+
+	protected abstract void NormalAttack();
 
 	protected abstract void OffensiveAbility();
 
