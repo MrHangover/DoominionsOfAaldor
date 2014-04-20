@@ -10,13 +10,13 @@ public abstract class Player : MonoBehaviour {
 	protected float maxSpeed;
 	protected int health;
 	protected int maxHealth;
-	protected float normalCD = 0f;
-	protected float offensiveCD = 0f;
-	protected float speedCD = 0f;
-	protected float defensiveCD = 0f;
-	protected float ultCD;
+	protected float normalCD = -1f;
+	protected float offensiveCD = -1f;
+	protected float movementCD = -1f;
+	protected float defensiveCD = -1f;
+	protected float ultCD = -1f;
 	bool canMove = true;
-	float moveTimer = 0.3f;
+	float stunnedCD = -1f;
 
 	// Use this for initialization
 	void Start () 
@@ -27,10 +27,8 @@ public abstract class Player : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
-
 		moveH = Input.GetAxis ("Horizontal");
 		moveV = Input.GetAxis ("Vertical");
-
 
 		if(canMove){
 				rigidbody2D.velocity = new Vector2(moveV * maxSpeed, rigidbody2D.velocity.y);
@@ -39,14 +37,17 @@ public abstract class Player : MonoBehaviour {
 
 		if(Speech)
 		{
-			rigidbody2D.velocity = new Vector2 (0,0);
+			rigidbody2D.velocity = new Vector2 (0f,0f);
 		}
 
-		if(moveH != 0 || moveV != 0){
-			transform.eulerAngles = new Vector3(0f, 0f, Mathf.Atan2(moveV, moveH) * (180f / Mathf.PI) - 90);
-			if(transform.eulerAngles.z < 360)
-				transform.eulerAngles = new Vector3(0f, 0f, transform.eulerAngles.z + 360);
+		if(moveH != 0f || moveV != 0f){
+			transform.eulerAngles = new Vector3(0f, 0f, Mathf.Atan2(moveV, moveH) * (180f / Mathf.PI) - 90f);
+			if(transform.eulerAngles.z < 360f)
+				transform.eulerAngles = new Vector3(0f, 0f, transform.eulerAngles.z + 360f);
 		}
+
+		if(!canMove && stunnedCD < Time.time)
+			canMove = true;
 	}
 
 	void Update ()
@@ -78,7 +79,8 @@ public abstract class Player : MonoBehaviour {
 	}
 
 	public void Stun(float duration){
-
+		canMove = false;
+		stunnedCD = duration + Time.time;
 	}
 
 	protected abstract void NormalAttack();
