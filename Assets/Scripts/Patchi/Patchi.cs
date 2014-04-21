@@ -28,7 +28,12 @@ public class Patchi : Player {
 
 	// Use this for initialization
 	void Start () {
-		
+
+		maxSpeed = 15f;
+		maxHealth = 50;
+		health = 50;
+
+
 		animator = gameObject.GetComponent<Animator>();
 	}
 	
@@ -45,24 +50,24 @@ public class Patchi : Player {
 		}
 
 
-		if(Input.GetButtonDown("Fire1"))
+		if(Input.GetButtonDown("Normal"))
 		{
 
 			if(AttackCakeCD < Time.time)
 			{
 				GameObject Cake = Instantiate(AttackCake, AttackCakePos.position, AttackCakePos.rotation) as GameObject;
 				Cake.rigidbody2D.velocity = new Vector2(Mathf.Cos(transform.eulerAngles.z * (Mathf.PI / 180f)),
-				                                        Mathf.Sin(transform.eulerAngles.z * (Mathf.PI / 180f))) * 20f;
+				                                        Mathf.Sin(transform.eulerAngles.z * (Mathf.PI / 180f))) * 15f;
 				CDAttackCake();
 			}
 		}
 
-		if(Input.GetKeyDown(KeyCode.Alpha1))
+		if(Input.GetButtonDown("Speed"))
 		{
 
 			if(SpeedCD < Time.time && UltTime < Time.time)
 			{
-				maxSpeed = 15f;
+				maxSpeed = 20f;
 				SpeedTimer();
 				CDSpeed();
 			}
@@ -71,7 +76,7 @@ public class Patchi : Player {
 		}
 
 
-		if(Input.GetKeyDown(KeyCode.Alpha2))
+		if(Input.GetButtonDown("Defensive"))
 		{
 			if(DefBallCD < Time.time)
 			{
@@ -80,7 +85,7 @@ public class Patchi : Player {
 			}
 		}
 
-		if(Input.GetKeyDown(KeyCode.Alpha3))
+		if(Input.GetButtonDown("Offensive"))
 		{
 			if(AttackBallCD < Time.time)
 			{
@@ -91,7 +96,7 @@ public class Patchi : Player {
 			}
 		}
 
-		if(Input.GetKeyDown(KeyCode.Alpha4))
+		if(Input.GetButtonDown("Ult"))
 		{
 			if (UltCD < Time.time)
 			{
