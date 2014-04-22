@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyArea : MonoBehaviour {
 
-	public Transform Player;
+	GameObject Player;
 	public Transform Enemy;
 	
 	float Movement = 8f;
@@ -12,12 +12,14 @@ public class EnemyArea : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
+		Player = GameObject.FindWithTag("Player");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+		Enemy.position = Vector3.MoveTowards(transform.position, Player.transform.position, Movement*Time.deltaTime);
 	}
 
 	
@@ -28,7 +30,7 @@ public class EnemyArea : MonoBehaviour {
 
 			if(Combat == false)
 			{
-				Enemy.position = Vector3.MoveTowards(transform.position, Player.position, Movement*Time.deltaTime);
+				Enemy.position = Vector3.MoveTowards(transform.position, Player.transform.position, Movement*Time.deltaTime);
 				
 			}
 		}
