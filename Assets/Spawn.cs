@@ -1,17 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpawnPlayer : MonoBehaviour {
+public class Spawn : MonoBehaviour {
 
-	public GameObject PlayerP;
+	public GameObject Spawning;
 	public Transform SpawnPos;
-	private Player test;
 
 	// Use this for initialization
 	void Start () {
-		GameObject Spawn = Instantiate(PlayerP, SpawnPos.position, SpawnPos.rotation) as GameObject;
-
-
+		GameObject Start = Instantiate(Spawning, SpawnPos.position, SpawnPos.rotation) as GameObject;
 	}
 	
 	// Update is called once per frame

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyArea : MonoBehaviour {
 
-	public Transform Player;
+	public GameObject AttackPoint;
 	public Transform Enemy;
 	
 	float Movement = 8f;
@@ -12,7 +12,7 @@ public class EnemyArea : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		AttackPoint = GameObject.FindWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -28,7 +28,8 @@ public class EnemyArea : MonoBehaviour {
 
 			if(Combat == false)
 			{
-				Enemy.position = Vector3.MoveTowards(transform.position, Player.position, Movement*Time.deltaTime);
+				Enemy.position = Vector3.MoveTowards(transform.position, AttackPoint.transform.position , Movement*Time.deltaTime);
+				Debug.Log("Test");
 				
 			}
 		}
