@@ -56,8 +56,8 @@ public class Patchi : Player {
 			if(AttackCakeCD < Time.time)
 			{
 				GameObject Cake = Instantiate(AttackCake, AttackCakePos.position, AttackCakePos.rotation) as GameObject;
-				Cake.rigidbody2D.velocity = new Vector2(Mathf.Cos(transform.eulerAngles.z * (Mathf.PI / 180f)),
-				                                        Mathf.Sin(transform.eulerAngles.z * (Mathf.PI / 180f))) * 15f;
+				Cake.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
+				                                        Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 15f;
 				CDAttackCake();
 			}
 		}
