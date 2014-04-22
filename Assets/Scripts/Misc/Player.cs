@@ -37,7 +37,8 @@ public abstract class Player : MonoBehaviour {
 
 		if(Speech)
 		{
-			rigidbody2D.velocity = new Vector2 (0f,0f);
+			//rigidbody2D.velocity = new Vector2 (0f,0f);
+			Time.timeScale = 0f;
 		}
 
 		if(moveH != 0f || moveV != 0f){
