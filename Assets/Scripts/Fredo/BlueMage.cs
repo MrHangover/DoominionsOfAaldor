@@ -1,54 +1,77 @@
-﻿/*using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class BlueMage : Player {
-	/* Animator AnimMage;
 
-	float FrostNovaCD = 0;
-	float IceShardCD = 0;
-	float ShieldCD = 0;
-	float SprintCD = 0;
-	float FrozenOrbCD = 0;
-
-	public GameObject FrozenOrb;
-	public Transform FrozenOrbPos;
-
-	public GameObject IceShard;
-	public Transform IceShardPos;
-
-	public GameObject Shield;
-	public Transform ShieldPos;
-
-	public GameObject FrostNova;
-	public Transform FrostNova;
-*/
-
+	Animator blueAnimator;
+	Animator[] animators;
+	BoxCollider2D boxCollider2D;
+	public GameObject ultBlue;
+	float ultActiveTime = -1f;
+	
 	// Use this for initialization
-/*	void Start () {
-//		AnimMage = GetComponent<Animator>();
+	void Start () {
+		maxSpeed = 15f;
+		maxHealth = 60;
+		health = 60;
+		animators = GetComponentsInChildren<Animator>();
+		blueAnimator = animators[0];
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		AnimMage.SetFloat ("moveV", Mathf.Abs (moveV));
-		AnimMage.SetFloat ("moveH", Mathf.Abs (moveH));
-	
+		if(Input.GetButton("Normal"))
+			NormalAttack();
+		if(Input.GetButton("Offensive"))
+			OffensiveAbility();
+		if(Input.GetButton("Defensive"))
+			DefensiveAbility();
+		if(Input.GetButton("Speed"))
+			MovementAbility();
+		if(Input.GetButton("Ult"))
+			UltAbility();
 		
-		protected override void OffensiveAbility(){
-			
+		if(ultActiveTime >= Time.time){
+			maxSpeed = Mathf.Lerp(0f, 30f, (15f - (ultActiveTime - Time.time))/15f);
 		}
-		
-		protected override void DefensiveAbility(){
-			
+		if(maxSpeed > 15f){
+			if(ultActiveTime < Time.time){
+				maxSpeed = 15f;
+
+			}
 		}
-		
-		protected override void MovementAbility(){
-			
-		}
-		
-		protected override void UltAbility(){
-			
-		}
-	
 	}
-}*/
+	
+	protected override void NormalAttack(){
+		if(normalCD <= Time.time){
+			normalCD = Time.time + 0.5f;
+		}
+	}
+	
+	protected override void OffensiveAbility(){
+		if(offensiveCD <= Time.time){
+			
+		}
+	}
+	
+	protected override void DefensiveAbility(){
+		if(defensiveCD <= Time.time){
+			
+		}
+	}
+	
+	protected override void MovementAbility(){
+		if(movementCD <= Time.time){
+			
+		}
+	}
+	
+	protected override void UltAbility(){
+		if(ultCD <= Time.time){
+			Stun(1f);
+			rigidbody2D.velocity = Vector2.zero;
+			ultActiveTime = 16f + Time.time;
+
+		}
+	}
+}
