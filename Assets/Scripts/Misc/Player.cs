@@ -31,8 +31,9 @@ public abstract class Player : MonoBehaviour {
 		moveV = Input.GetAxis ("Vertical");
 
 		if(canMove){
-				rigidbody2D.velocity = new Vector2(moveV * maxSpeed, rigidbody2D.velocity.y);
-				rigidbody2D.velocity = new Vector2(moveH * maxSpeed, rigidbody2D.velocity.x);
+			//rigidbody2D.velocity = new Vector2(moveV * maxSpeed, rigidbody2D.velocity.y);
+			//rigidbody2D.velocity = new Vector2(moveH * maxSpeed, rigidbody2D.velocity.x);
+			rigidbody2D.velocity = new Vector2(moveH * maxSpeed, moveV * maxSpeed);
 		}
 
 		if(Speech)
