@@ -8,6 +8,8 @@ public class Text : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+	
 	
 	}
 	
@@ -18,8 +20,10 @@ public class Text : MonoBehaviour {
 
 	void OnTriggerStay2D (Collider2D other)
 	{
+
 		if(other.gameObject.tag == "Player")
 		{
+			Debug.Log ("Hej");
 			Talk.Speechset();
 
 		

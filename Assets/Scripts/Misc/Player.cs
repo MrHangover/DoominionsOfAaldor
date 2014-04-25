@@ -21,7 +21,7 @@ public abstract class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		Speech = false;
+
 	}
 	
 	// Update is called once per frame
