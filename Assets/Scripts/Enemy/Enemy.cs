@@ -10,6 +10,6 @@ public abstract class Enemy : Creature {
 		playerScript.TakeDamage(damage);
 		float angle = Mathf.Atan2(transform.position.y - player.transform.position.y, transform.position.x - player.transform.position.x);
 		Vector2 knock = new Vector2(transform.position.x - player.transform.position.x, transform.position.y - player.transform.position.y);
-		playerScript.KnockBack(new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * -knockBackForce);
+		playerScript.KnockBack(new Vector2(Mathf.Cos(angle) * -knockBackForce, Mathf.Sin(angle) * -knockBackForce));
 	}
 }

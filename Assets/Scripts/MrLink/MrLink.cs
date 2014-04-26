@@ -111,6 +111,8 @@ public class MrLink : Player {
 			rigidbody2D.velocity = Vector2.zero;
 			ultCD = 90f + Time.time;
 			ultActiveTime = 16f + Time.time;
+			immunityCD = 16f + Time.time;
+			knockBackCD = 16f + Time.time;
 			linkAnimator.SetBool("isUlting", true);
 			linkAnimator.SetTrigger("ult");
 			GameObject bigYo = Instantiate(ultYo, transform.position, transform.rotation) as GameObject;

@@ -65,7 +65,7 @@ public class AISlinger : Enemy{
 	protected override void OnCollisionEnter2D(Collision2D other){
 		moveDirection = -moveDirection;
 		if(other.gameObject.tag == "Player"){
-			dealDamage(other.gameObject, 5, true, 30);
+			dealDamage(other.gameObject, 5, true, 50);
 		}
 	}
 

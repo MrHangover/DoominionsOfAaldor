@@ -1,6 +1,5 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\AISlinger.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
     <Files>
     </Files>
   </MonoDevelop.Ide.Workbench>
