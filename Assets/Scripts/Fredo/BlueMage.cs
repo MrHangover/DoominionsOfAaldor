@@ -8,10 +8,16 @@ public class BlueMage : Player {
 	BoxCollider2D boxCollider2D;
 	public GameObject ultBlue;
 	float ultActiveTime = -1f;
-	
+	float AttackIceCD = 0;
+
+
+	public GameObject AttackIce;
+	public Transform AttackIcePos;
+
+
 	// Use this for initialization
 	void Start () {
-		maxSpeed = 15f;
+		maxSpeed = 10f;
 		maxHealth = 60;
 		health = 60;
 		animators = GetComponentsInChildren<Animator>();
@@ -41,9 +47,18 @@ public class BlueMage : Player {
 			}
 		}
 	}
+	void CDAttackIce () {
+		normalCD = 0.5f + Time.time;
+		
+		return;
+	}
 	
 	protected override void NormalAttack(){
 		if(normalCD <= Time.time){
+			GameObject IceShard = Instantiate(AttackIce, AttackIcePos.position, AttackIcePos.rotation) as GameObject;
+			IceShard.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
+			                                        Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 15f;
+			CDAttackIce();
 			normalCD = Time.time + 0.5f;
 		}
 	}
