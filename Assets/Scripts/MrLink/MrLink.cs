@@ -53,6 +53,11 @@ public class MrLink : Player {
 			defStacks++;
 			defStackTime = Time.time + 20f;
 		}
+
+		if(immunityCD > Time.time)
+			linkAnimator.SetBool("isDamaged", true);
+		else
+			linkAnimator.SetBool("isDamaged", false);
 	}
 
 	protected override void NormalAttack(){

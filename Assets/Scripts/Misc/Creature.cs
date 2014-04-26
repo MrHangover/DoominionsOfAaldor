@@ -8,7 +8,7 @@ public abstract class Creature : MonoBehaviour {
 	protected int maxHealth;
 	protected bool canMove = true;
 	protected float stunnedCD = -1f;
-	float immunityCD = 0f;
+	protected float immunityCD = 0f;
 	
 	public void TakeDamage(int damage){
 		if(immunityCD < Time.time){
@@ -24,7 +24,7 @@ public abstract class Creature : MonoBehaviour {
 	public void KnockBack(Vector2 force){
 		Stun (0.25f);
 		rigidbody2D.velocity = force;
-		immunityCD = Time.time + 0.65f;
+		immunityCD = Time.time + 0.5f;
 	}
 	
 	public void Stun(float duration){
