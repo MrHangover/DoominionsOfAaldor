@@ -4,7 +4,7 @@ using System.Collections;
 public abstract class Player : Creature {
 
 	public static bool facingRight = true;
-	public bool Speech;
+	public static bool Speech;
 	protected float moveH;
 	protected float moveV;
 	protected float normalCD = -1f;
@@ -64,6 +64,12 @@ public abstract class Player : Creature {
 	protected abstract void UltAbility();
 
 	public void Speechset() {
-		Speech = true;
+		if(Speech == false)
+		{
+			Speech = true;
+		} else {
+
+			Speech = false;
+		}
 	}
 }
