@@ -4,7 +4,7 @@ using System.Collections;
 public abstract class Player : Creature {
 
 	public static bool facingRight = true;
-	public bool Speech;
+	public static bool Speech;
 	protected float moveH;
 	protected float moveV;
 	protected float normalCD = -1f;
@@ -12,6 +12,13 @@ public abstract class Player : Creature {
 	protected float movementCD = -1f;
 	protected float defensiveCD = -1f;
 	protected float ultCD = -1f;
+
+
+
+	public float offensiveCDTimer;
+	public float movementCDTimer;
+	public float defensiveCDTimer;
+	public float ultCDTimer;
 	
 	// Update is called once per frame
 	void FixedUpdate ()
@@ -26,7 +33,7 @@ public abstract class Player : Creature {
 		if(Speech)
 		{
 			//rigidbody2D.velocity = new Vector2 (0f,0f);
-			Time.timeScale = 0f;
+			//Time.timeScale = 0f;
 		}
 
 		if(rigidbody2D.velocity.x != 0f || rigidbody2D.velocity.y != 0f){
@@ -37,6 +44,12 @@ public abstract class Player : Creature {
 
 		if(!canMove && stunnedCD < Time.time)
 			canMove = true;
+
+
+		offensiveCDTimer = offensiveCD;
+		movementCDTimer = movementCD;
+		defensiveCDTimer = defensiveCD;
+		ultCDTimer = ultCD;
 	}
 
 	void Update ()
@@ -51,6 +64,8 @@ public abstract class Player : Creature {
 			MovementAbility();
 		if(Input.GetButton("Ult"))
 			UltAbility();
+
+
 	}
 
 	protected abstract void NormalAttack();
@@ -64,6 +79,12 @@ public abstract class Player : Creature {
 	protected abstract void UltAbility();
 
 	public void Speechset() {
-		Speech = true;
+		if(Speech == false)
+		{
+			Speech = true;
+		} else {
+
+			Speech = false;
+		}
 	}
 }

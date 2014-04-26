@@ -6,11 +6,15 @@ public class Select : MonoBehaviour {
 	public GameObject Player;
 	public Transform SpawnPos;
 	public GameObject SelectObejct;
-	
+
+	GameObject Interface;
 
 
 	// Use this for initialization
 	void Start () {
+
+		Interface = GameObject.FindWithTag("UI");
+
 		Time.timeScale = 0f;
 	}
 	
@@ -22,9 +26,12 @@ public class Select : MonoBehaviour {
 
 	void OnMouseUp(){
 
-			GameObject Spawn = Instantiate(Player, SpawnPos.position, SpawnPos.rotation) as GameObject;
-			GameObject.Destroy (SelectObejct);
-			Time.timeScale = 1f;
+		UI Begin = Interface.GetComponent<UI>();
+
+		GameObject Spawn = Instantiate(Player, SpawnPos.position, SpawnPos.rotation) as GameObject;
+		GameObject.Destroy (SelectObejct);
+		Begin.Begin = true;
+		Time.timeScale = 1f;
 
 	
 	}

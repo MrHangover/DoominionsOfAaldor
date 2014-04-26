@@ -52,90 +52,44 @@ public class Patchi : Player {
 		}
 
 
-		if(Input.GetButtonDown("Normal"))
-		{
+		if(Input.GetButton("Normal"))
+			NormalAttack();
 
-			if(AttackCakeCD < Time.time)
-			{
-				GameObject Cake = Instantiate(AttackCake, AttackCakePos.position, AttackCakePos.rotation) as GameObject;
-				Cake.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
-				                                        Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 15f;
-				CDAttackCake();
-			}
-		}
+		if(Input.GetButton("Offensive"))
+			OffensiveAbility();
 
-		if(Input.GetButtonDown("Speed"))
-		{
+		if(Input.GetButton("Defensive"))
+			DefensiveAbility();
 
-			if(SpeedCD < Time.time && UltTime < Time.time)
-			{
-				maxSpeed = 20f;
-				SpeedTimer();
-				CDSpeed();
-			}
+		if(Input.GetButton("Speed"))
+			MovementAbility();
 
-
-		}
-
-
-		if(Input.GetButtonDown("Defensive"))
-		{
-			if(DefBallCD < Time.time)
-			{
-				GameObject Def = Instantiate(DefBall, DefBallPos.position, DefBallPos.rotation) as GameObject;
-				CDDefBall();
-			}
-		}
-
-		if(Input.GetButtonDown("Offensive"))
-		{
-			if(AttackBallCD < Time.time)
-			{
-				CDAttackBall();
-				GameObject Attack = Instantiate(AttackBall, AttackBallPos.position, AttackBallPos.rotation) as GameObject;
-				Attack.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 0f) * (Mathf.PI / 180f)),
-				                                          Mathf.Sin(transform.eulerAngles.z * (Mathf.PI / 180f))) * 20f;
-				/*
-				GameObject Attack2 = Instantiate(AttackBall, AttackBallPos.position, AttackBallPos.rotation) as GameObject;
-				Attack2.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 10) * (Mathf.PI / 180f)),
-				                                          Mathf.Sin(transform.eulerAngles.z * (Mathf.PI / 180f))) * 20f;
-				*/
-			}
-		}
-
-		if(Input.GetButtonDown("Ult"))
-		{
-			if (UltCD < Time.time)
-			{
-				maxSpeed = 0f;
-				GameObject Ult = Instantiate(Nova, NovaPos.position, NovaPos.rotation) as GameObject;
-				CDUlt();
-				UltTimer();
-			}
-		}
+		if(Input.GetButton("Ult"))
+			UltAbility();
+		
 	}
 
 
 	void CDAttackCake() {
-		AttackCakeCD = 0.5f + Time.time;
+		normalCD = 0.5f + Time.time;
 
 		return;
 	}
 
 	void CDDefBall() {
-		DefBallCD = 5.0f + Time.time;
+		defensiveCD = 5.0f + Time.time;
 		
 		return;
 	}
 
 	void CDAttackBall() {
-		AttackBallCD = 5.0f + Time.time;
+		offensiveCD = 5.0f + Time.time;
 		
 		return;
 	}
 
 	void CDSpeed() {
-		SpeedCD = 10.0f + Time.time;
+		movementCD = 10.0f + Time.time;
 		
 		return;
 	}
@@ -147,7 +101,7 @@ public class Patchi : Player {
 	}
 
 	void CDUlt() {
-		UltCD = 60.0f + Time.time;
+		ultCD = 60.0f + Time.time;
 		
 		return;
 	}
@@ -160,21 +114,63 @@ public class Patchi : Player {
 
 	protected override void NormalAttack(){
 
+		if(normalCD < Time.time)
+		{
+			GameObject Cake = Instantiate(AttackCake, AttackCakePos.position, AttackCakePos.rotation) as GameObject;
+			Cake.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
+			                                        Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 15f;
+			CDAttackCake();
+		}
+
 	}
 
 	protected override void OffensiveAbility(){
+
+		if(offensiveCD < Time.time)
+		{
+			CDAttackBall();
+			GameObject Attack = Instantiate(AttackBall, AttackBallPos.position, AttackBallPos.rotation) as GameObject;
+			Attack.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 0f) * (Mathf.PI / 180f)),
+			                                          Mathf.Sin(transform.eulerAngles.z * (Mathf.PI / 180f))) * 20f;
+			/*
+				GameObject Attack2 = Instantiate(AttackBall, AttackBallPos.position, AttackBallPos.rotation) as GameObject;
+				Attack2.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 10) * (Mathf.PI / 180f)),
+				                                          Mathf.Sin(transform.eulerAngles.z * (Mathf.PI / 180f))) * 20f;
+				*/
+		}
 
 	}
 	
 	protected override void DefensiveAbility(){
 
+		if(defensiveCD < Time.time)
+		{
+			GameObject Def = Instantiate(DefBall, DefBallPos.position, DefBallPos.rotation) as GameObject;
+			CDDefBall();
+		}
+
 	}
 	
 	protected override void MovementAbility(){
 
+		if(movementCD < Time.time && UltTime < Time.time)
+		{
+			maxSpeed = 20f;
+			SpeedTimer();
+			CDSpeed();
+		}
+
 	}
 	
 	protected override void UltAbility(){
+
+		if (ultCD < Time.time)
+		{
+			maxSpeed = 0f;
+			GameObject Ult = Instantiate(Nova, NovaPos.position, NovaPos.rotation) as GameObject;
+			CDUlt();
+			UltTimer();
+		}
 
 	}
 
