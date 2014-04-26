@@ -1,6 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Misc\Text.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Misc\UI.cs" Line="60" Column="2" />
+      <File FileName="Assets\Scripts\Misc\Player.cs" Line="36" Column="6" />
+      <File FileName="Assets\Scripts\Misc\Text.cs" Line="110" Column="26" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
