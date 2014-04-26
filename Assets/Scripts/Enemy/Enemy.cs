@@ -1,53 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour {
+public abstract class Enemy : Creature {
 
-	bool canMove = true;
+	protected abstract void OnCollisionEnter2D(Collision2D other);
 
-	protected float maxSpeed;
-	protected int health;
-	protected int maxHealth;
-
-	float stunnedCD = -1f;
-
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-
-
-	void FixedUpdate ()
-	{
-
-		if(canMove){
-
-
-
-
-
-
-			if(!canMove && stunnedCD < Time.time)
-				canMove = true;
-		}
-
-	}
-
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-	public void TakeDamage(int damage){
-		health -= damage;
-		if(health > maxHealth)
-			health = maxHealth;
-	}
-
-	public void Stun(float duration){
-		canMove = false;
-		stunnedCD = duration + Time.time;
+	protected void dealDamage(GameObject player, int damage, bool isKnockBacking, int knockBackForce = 0){
+		Creature playerScript = player.GetComponent<Creature>();
+		playerScript.TakeDamage(damage);
+		float angle = Mathf.Atan2(transform.position.y - player.transform.position.y, transform.position.x - player.transform.position.x);
+		Vector2 knock = new Vector2(transform.position.x - player.transform.position.x, transform.position.y - player.transform.position.y);
+		playerScript.KnockBack(new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * -knockBackForce);
 	}
 }

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class MrLink : Player {
 	
 	List<GameObject> teleYos = new List<GameObject>();
-	List<GameObject> defYos = new List<GameObject>();
 	int defStacks = 5;
 	Animator yoAnimator;
 	Animator linkAnimator;

@@ -14,7 +14,7 @@ public class TeleYo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Mathf.Abs(rigidbody2D.velocity.x + rigidbody2D.velocity.y) < 1f)
+		if(Mathf.Abs(rigidbody2D.velocity.x + rigidbody2D.velocity.y) < 0.5f)
 			circleCollider.enabled = false;
 		else
 			circleCollider.enabled = true;

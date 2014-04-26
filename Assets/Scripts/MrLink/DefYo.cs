@@ -12,7 +12,7 @@ public class DefYo : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		transform.position = player.transform.position + new Vector3(Mathf.Cos(rot), Mathf.Sin(rot), 0f) * 2f;
 		rot += Time.deltaTime * 5f;
 	}
