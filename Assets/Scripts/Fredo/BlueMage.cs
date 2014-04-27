@@ -14,10 +14,13 @@ public class BlueMage : Player {
 	public GameObject AttackIce;
 	public Transform AttackIcePos;
 
+	public GameObject AttackOrb;
+	public Transform AttackOrbPos;
+
 
 	// Use this for initialization
 	void Start () {
-		maxSpeed = 10f;
+		maxSpeed = 5f;
 		maxHealth = 60;
 		health = 60;
 		animators = GetComponentsInChildren<Animator>();
@@ -40,9 +43,9 @@ public class BlueMage : Player {
 		if(ultActiveTime >= Time.time){
 			maxSpeed = Mathf.Lerp(0f, 30f, (15f - (ultActiveTime - Time.time))/15f);
 		}
-		if(maxSpeed > 15f){
+		if(maxSpeed > 5f){
 			if(ultActiveTime < Time.time){
-				maxSpeed = 15f;
+				maxSpeed = 5f;
 
 			}
 		}
@@ -83,9 +86,11 @@ public class BlueMage : Player {
 	
 	protected override void UltAbility(){
 		if(ultCD <= Time.time){
-			Stun(1f);
-			rigidbody2D.velocity = Vector2.zero;
-			ultActiveTime = 16f + Time.time;
+			GameObject OrbofIce = Instantiate(AttackOrb, AttackOrbPos.position, AttackOrbPos.rotation) as GameObject;
+			OrbofIce.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
+			                                            Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 15f;
+			CDAttackIce();
+			ultCD = Time.time + 8f;
 
 		}
 	}

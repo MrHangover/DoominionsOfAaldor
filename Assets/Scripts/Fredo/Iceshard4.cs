@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IceShard : MonoBehaviour {
+public class IceShard4 : MonoBehaviour {
 	
 	public GameObject PlayerF;
 	
@@ -12,7 +12,7 @@ public class IceShard : MonoBehaviour {
 		
 		Player script = PlayerF.GetComponent<Player>();
 		
-
+		
 	}
 	
 	// Update is called once per frame
