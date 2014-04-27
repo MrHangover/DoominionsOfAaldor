@@ -11,6 +11,8 @@ public class BlueMage : Player {
 	float AttackIceCD = 0;
 
 
+
+
 	public GameObject AttackIce;
 	public Transform AttackIcePos;
 
@@ -55,20 +57,30 @@ public class BlueMage : Player {
 		
 		return;
 	}
-	
+
+
+
 	protected override void NormalAttack(){
 		if(normalCD <= Time.time){
+
 			GameObject IceShard = Instantiate(AttackIce, AttackIcePos.position, AttackIcePos.rotation) as GameObject;
 			IceShard.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
-			                                        Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 15f;
+			                                            Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 15f;
 			CDAttackIce();
 			normalCD = Time.time + 0.5f;
 		}
 	}
-	
+
+
 	protected override void OffensiveAbility(){
 		if(offensiveCD <= Time.time){
+
+
 			
+
+
+			offensiveCD = Time.time + 2.5f;
+
 		}
 	}
 	
@@ -88,7 +100,7 @@ public class BlueMage : Player {
 		if(ultCD <= Time.time){
 			GameObject OrbofIce = Instantiate(AttackOrb, AttackOrbPos.position, AttackOrbPos.rotation) as GameObject;
 			OrbofIce.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
-			                                            Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 15f;
+			                                            Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 7f;
 			CDAttackIce();
 			ultCD = Time.time + 8f;
 

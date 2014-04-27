@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IceShard2 : MonoBehaviour {
+public class OrbShard2 : MonoBehaviour {
 	
 	public GameObject PlayerF;
 	
 	// Use this for initialization
 	void Start () {
-		GameObject.DestroyObject(gameObject,3);
+		GameObject.DestroyObject(gameObject,1);
 		
 		
 		Player script = PlayerF.GetComponent<Player>();
