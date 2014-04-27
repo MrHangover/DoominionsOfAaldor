@@ -10,6 +10,7 @@ public class AISlinger : Enemy{
 	float fireTimer = 0f;
 	float playerCheckRadius = 7f;
 	float moveTimer = 0f;
+	Animator animator;
 	public Rigidbody2D projectile;
 	public LayerMask whatIsPlayer;
 	public Transform playerCheck;
@@ -23,27 +24,29 @@ public class AISlinger : Enemy{
 		maxSpeed = 10;
 		maxHealth = 10;
 		health = maxHealth;
+		animator = GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		if(canMove){
-			if(!canMove && stunnedCD < Time.time)
-				canMove = true;
-		}
+		if(!canMove && stunnedCD < Time.time)
+			canMove = true;
 
 		if(canMove){
 			playerDetected = Physics2D.OverlapCircle(playerCheck.position, playerCheckRadius, whatIsPlayer);
 			rigidbody2D.velocity = moveDirection;
 
 			if(playerDetected){
-				if(fireTimer < 0.4f)
+				if(fireTimer < 0.4f){
 					moveTimer = 0.19f;
+					animator.SetBool("isShooting", true);
+				}
 				if(canFire){
 					Fire(playerDetected.transform.position);
 					canFire = false;
 					fireTimer = 3f;
+					animator.SetBool("isShooting", false);
 				}
 			}
 			if(fireTimer < 0f){
@@ -60,6 +63,12 @@ public class AISlinger : Enemy{
 			fireTimer -= Time.deltaTime;
 			moveTimer -= Time.deltaTime;
 		}
+
+		if(immunityCD > Time.time)
+			animator.SetBool("isDamaged", true);
+		else
+			animator.SetBool("isDamaged", false);
+		Debug.Log(immunityCD > Time.time);
 	}
 
 	protected override void OnCollisionEnter2D(Collision2D other){

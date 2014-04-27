@@ -1,21 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SlingerShot : MonoBehaviour {
+public class SlingerShot : Projectile {
 
 	// Use this for initialization
 	void Start () {
 		Destroy(this.gameObject, 5);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-	void OnCollisionEnter2D(Collision2D other){
+	protected override void OnCollisionEnter2D(Collision2D other){
 		if(other.gameObject.tag == "Player"){
-			other.gameObject.rigidbody2D.velocity += this.rigidbody2D.velocity;
+			dealDamage(other.gameObject, 6, false);
 		}
 		if(other.gameObject.tag != "Enemy")
 			Destroy(this.gameObject);
