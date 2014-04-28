@@ -23,5 +23,6 @@ public class OrbShard : Projectile {
 	protected override void OnCollisionEnter2D(Collision2D other){
 		if(other.gameObject.tag == "Enemy")
 			dealDamage(other.gameObject, 1, false);
+			Slow(other.gameObject,4f, 0.3f);
 	}
 }

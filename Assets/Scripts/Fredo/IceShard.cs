@@ -24,5 +24,9 @@ public class IceShard: Projectile {
 	protected override void OnCollisionEnter2D(Collision2D other){
 		if(other.gameObject.tag == "Enemy")
 			dealDamage(other.gameObject, 4, true, 2);
+			Slow(other.gameObject,3f, 0.5f);
 	}
+
+
+
 }

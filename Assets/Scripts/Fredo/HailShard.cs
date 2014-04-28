@@ -24,5 +24,6 @@ public class HailShard : Projectile {
 	protected override void OnCollisionEnter2D(Collision2D other){
 		if(other.gameObject.tag == "Enemy")
 			dealDamage(other.gameObject, 3, true, 5);
+			Slow(other.gameObject,1.5f, 0.75f);
 	}
 }
