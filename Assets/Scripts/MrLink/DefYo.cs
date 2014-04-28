@@ -14,7 +14,7 @@ public class DefYo : Weapon {
 	// Update is called once per frame
 	void FixedUpdate () {
 		transform.position = player.transform.position + new Vector3(Mathf.Cos(rot), Mathf.Sin(rot), 0f) * 2f;
-		rot += Time.deltaTime * 5f;
+		rot += Time.deltaTime * 15f;
 	}
 
 	protected override void OnTriggerEnter2D(Collider2D other){
