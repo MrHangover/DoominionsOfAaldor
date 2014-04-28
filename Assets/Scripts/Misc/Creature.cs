@@ -7,6 +7,9 @@ public abstract class Creature : MonoBehaviour {
 	protected int health;
 	protected int maxHealth;
 	protected bool canMove = true;
+	protected float slowCD = 0f;
+	protected float slowDuration = 1f;
+	protected float slow = 1f;
 	protected float stunnedCD = 0f;
 	protected float immunityCD = 0f;
 	protected float knockBackCD = 0f;
@@ -20,7 +23,7 @@ public abstract class Creature : MonoBehaviour {
 				Destroy(gameObject);
 			immunityCD = Time.time + 0.25f;
 		}
-	 }
+	}
 	
 	public void KnockBack(Vector2 force){
 		if(knockBackCD < Time.time){
@@ -34,5 +37,13 @@ public abstract class Creature : MonoBehaviour {
 	public void Stun(float duration){
 		canMove = false;
 		stunnedCD = duration + Time.time;
+	}
+
+	public void Slow(float duration, float amount){
+		if(slowCD < Time.time){
+			slowDuration = Time.time + duration;
+			slow = 1f - amount;
+			slowCD = Time.time + 0.5f;
+		}
 	}
 }

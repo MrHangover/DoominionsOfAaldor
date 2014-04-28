@@ -35,7 +35,7 @@ public class AISlinger : Enemy{
 
 		if(canMove){
 			playerDetected = Physics2D.OverlapCircle(playerCheck.position, playerCheckRadius, whatIsPlayer);
-			rigidbody2D.velocity = moveDirection;
+			rigidbody2D.velocity = moveDirection * slow;
 
 			if(playerDetected){
 				if(fireTimer < 0.4f){
@@ -64,6 +64,8 @@ public class AISlinger : Enemy{
 			moveTimer -= Time.deltaTime;
 		}
 
+		if(slowDuration < Time.time)
+			slow = 1f;
 		if(immunityCD > Time.time)
 			animator.SetBool("isDamaged", true);
 		else
