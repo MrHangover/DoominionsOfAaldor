@@ -68,7 +68,6 @@ public class AISlinger : Enemy{
 			animator.SetBool("isDamaged", true);
 		else
 			animator.SetBool("isDamaged", false);
-		Debug.Log (immunityCD > Time.time);
 	}
 
 	protected override void OnCollisionEnter2D(Collision2D other){
