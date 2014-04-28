@@ -7,7 +7,7 @@ public class NovaShard : Projectile {
 	
 	// Use this for initialization
 	void Start () {
-		GameObject.DestroyObject(gameObject,3.5f);
+		GameObject.DestroyObject(gameObject,25.5f);
 		
 
 		
@@ -23,8 +23,8 @@ public class NovaShard : Projectile {
 	protected override void OnCollisionEnter2D(Collision2D other){
 		if(other.gameObject.tag == "Enemy")
 			dealDamage(other.gameObject, 0, true, 25);
-			Slow(other.gameObject,1.5f, 0.9f);
-			Slow(other.gameObject,3f, 0.5f);
-			Slow(other.gameObject,4.5f, 0.25f);
+			//Slow(other.gameObject,1.5f, 0.9f);
+			//Slow(other.gameObject,3f, 0.5f);
+			//Slow(other.gameObject,4.5f, 0.25f);
 	}
 }
