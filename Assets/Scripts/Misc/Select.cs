@@ -31,5 +31,7 @@ public class Select : MonoBehaviour {
 		GameObject.Destroy (SelectObejct);
 		Begin.Begin = true;
 		Time.timeScale = 1f;
+		Screen.showCursor = false;
+		Screen.lockCursor = true;
 	}
 }
