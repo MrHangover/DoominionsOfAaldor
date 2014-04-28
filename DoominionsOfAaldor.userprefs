@@ -1,18 +1,7 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fredo\NovaShard.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MrLink\MrLink.cs">
     <Files>
-      <File FileName="Assets\Scripts\Fredo\OrbofIce.cs" Line="98" Column="1" />
-      <File FileName="Assets\Scripts\Fredo\IceShard.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Misc\Projectile.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Fredo\BlueMage.cs" Line="152" Column="115" />
-      <File FileName="Assets\Scripts\MrLink\MrLink.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Fredo\IceParticle.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MrLink\DefYo.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MrLink\TeleYo.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Fredo\HailShard.cs" Line="18" Column="36" />
-      <File FileName="Assets\Scripts\Fredo\OrbShard.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Fredo\NovaShard.cs" Line="10" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

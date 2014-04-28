@@ -12,10 +12,6 @@ public abstract class Player : Creature {
 	protected float movementCD = -1f;
 	protected float defensiveCD = -1f;
 	protected float ultCD = -1f;
-
-
-
-
 	public static bool UIOffensiveCD = false;
 	public static bool UIMovementCD = false;
 	public static bool UIDefensiveCD = false;
@@ -31,8 +27,6 @@ public abstract class Player : Creature {
 			rigidbody2D.velocity = new Vector2(moveH * maxSpeed, moveV * maxSpeed);
 		}
 
-
-
 		if(rigidbody2D.velocity.x != 0f || rigidbody2D.velocity.y != 0f){
 			transform.eulerAngles = new Vector3(0f, 0f, Mathf.Atan2(rigidbody2D.velocity.y, rigidbody2D.velocity.x) * (180f / Mathf.PI) - 90f);
 			if(transform.eulerAngles.z < 360f)
@@ -41,9 +35,6 @@ public abstract class Player : Creature {
 
 		if(!canMove && stunnedCD < Time.time)
 			canMove = true;
-
-
-	
 	}
 
 	void Update ()
@@ -58,8 +49,6 @@ public abstract class Player : Creature {
 			MovementAbility();
 		if(Input.GetButton("Ult"))
 			UltAbility();
-
-
 	}
 
 	protected abstract void NormalAttack();
@@ -77,7 +66,6 @@ public abstract class Player : Creature {
 		{
 			Speech = true;
 		} else {
-
 			Speech = false;
 		}
 	}
