@@ -7,7 +7,7 @@ public class IceParticle : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		GameObject.DestroyObject(gameObject,0.3f);
+		GameObject.DestroyObject(gameObject,0.05f);
 
 
 		

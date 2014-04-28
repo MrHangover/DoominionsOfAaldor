@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IceShard: MonoBehaviour {
+public class IceShard: Projectile {
 	
 	public GameObject PlayerF;
 	
@@ -19,8 +19,10 @@ public class IceShard: MonoBehaviour {
 	void Update () {
 		
 		transform.Rotate(0, 0, 0);
-		
-		
-		
+	}
+
+	protected override void OnCollisionEnter2D(Collision2D other){
+		if(other.gameObject.tag == "Enemy")
+			dealDamage(other.gameObject, 4, true, 2);
 	}
 }

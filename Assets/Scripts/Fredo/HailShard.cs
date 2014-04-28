@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HailShard : MonoBehaviour {
+public class HailShard : Projectile {
 	
 	public GameObject PlayerF;
 	
@@ -19,8 +19,10 @@ public class HailShard : MonoBehaviour {
 	void Update () {
 		
 		transform.Rotate(0, 0, 15);
-		
-		
-		
+	}
+
+	protected override void OnCollisionEnter2D(Collision2D other){
+		if(other.gameObject.tag == "Enemy")
+			dealDamage(other.gameObject, 3, true, 5);
 	}
 }
