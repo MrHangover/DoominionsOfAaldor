@@ -29,7 +29,7 @@ public class Select : MonoBehaviour {
 
 		GameObject Spawn = Instantiate(Player, SpawnPos.position, SpawnPos.rotation) as GameObject;
 		GameObject.Destroy (SelectObejct);
-		//Begin.Begin = true;
+		Begin.Begin = true;
 		Time.timeScale = 1f;
 	}
 }

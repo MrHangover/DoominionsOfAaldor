@@ -22,11 +22,17 @@ public class UI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	
+
+	}
+
+	void FixedUpdate ()
+	{
 		ActivePlayer = GameObject.FindWithTag("Player");
 		Player Timer = ActivePlayer.GetComponent<Player>();
-
+		
 		Debug.Log(Timer.offensiveCDTimer);
-
+		
 		if(Timer.offensiveCDTimer > 0f)
 		{
 			Debug.Log ("lololo");
@@ -34,28 +40,27 @@ public class UI : MonoBehaviour {
 		} else {
 			string offensive = "Ready";
 		}
-
+		
 		if(Timer.movementCDTimer > 0f)
 		{
 			float movement = Timer.movementCDTimer;
 		} else {
 			string movement = "Ready";
 		}
-
+		
 		if(Timer.defensiveCDTimer > 0f)
 		{
 			float offensive = Timer.defensiveCDTimer;
 		} else {
 			string offensive = "Ready";
 		}
-
+		
 		if(Timer.ultCDTimer > 0f)
 		{
 			float offensive = Timer.ultCDTimer;
 		} else {
 			string offensive = "Ready";
 		}
-
 	}
 
 	void OnGUI() {

@@ -41,6 +41,7 @@ public class Text : MonoBehaviour {
 			Talk.Speechset();
 			Begin = true;
 			NextTimer = 100f + Time.time;
+			Time.timeScale = 0.00001f;
 		}
 
 	}
@@ -111,6 +112,7 @@ public class Text : MonoBehaviour {
 		{
 			TextFour = false;
 			Begin = false;
+			Time.timeScale = 1f;
 		}
 			
 
@@ -123,19 +125,19 @@ public class Text : MonoBehaviour {
 
 		if(TextTwo && !TextTwoDone)
 		{
-			NextTimer = 1f + Time.time;
+			NextTimer = 0.00001f + Time.time;
 			TextTwoDone = true;
 		}
 
 		if(TextThree && !TextThreeDone)
 		{
-			NextTimer = 1f + Time.time;
+			NextTimer = 0.00001f + Time.time;
 			TextThreeDone = true;
 		}
 
 		if(TextFour && !TextFourDone)
 		{
-			NextTimer = 1f + Time.time;
+			NextTimer = 0.00001f + Time.time;
 			TextFourDone = true;
 		}
 
