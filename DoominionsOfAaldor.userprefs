@@ -1,15 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fredo\OrbofIce.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Misc\UI.cs">
     <Files>
-      <File FileName="Assets\Scripts\Fredo\OrbofIce.cs" Line="55" Column="1" />
-      <File FileName="Assets\Scripts\Fredo\IceShard.cs" Line="27" Column="1" />
-      <File FileName="Assets\Scripts\Fredo\BlueMage.cs" Line="97" Column="2" />
-      <File FileName="Assets\Scripts\Fredo\Test.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Fredo\OrbofIce.cs" Line="55" Column="1" />
-      <File FileName="Assets\Scripts\Fredo\IceShard2.cs" Line="27" Column="1" />
-      <File FileName="Assets\Scripts\Fredo\IceShard3.cs" Line="27" Column="1" />
-      <File FileName="Assets\Scripts\Fredo\Iceshard4.cs" Line="27" Column="1" />
+      <File FileName="Assets\Scripts\Misc\UI.cs" Line="63" Column="4" />
+      <File FileName="Assets\Scripts\Misc\Player.cs" Line="25" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
