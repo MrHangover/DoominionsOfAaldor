@@ -10,7 +10,7 @@ public class AttackCakeSkill : Projectile {
 		GameObject.DestroyObject(gameObject,3);
 
 
-		Player script = PlayerP.GetComponent<Player>();
+
 		
 
 	}

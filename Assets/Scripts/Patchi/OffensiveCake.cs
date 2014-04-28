@@ -38,7 +38,7 @@ public class OffensiveCake : Projectile {
 			{
 			GameObject Cake = Instantiate(AttackCake, PosA.position, PosA.rotation) as GameObject;
 			Cake.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 45f) * (Mathf.PI / 180f)),
-			                                        Mathf.Sin((transform.eulerAngles.z + 45f) * (Mathf.PI / 180f))) * 1f;
+			                                        Mathf.Sin((transform.eulerAngles.z + 45f) * (Mathf.PI / 180f))) * 3f;
 				CakeFireOne = false;
 			}
 
@@ -46,7 +46,7 @@ public class OffensiveCake : Projectile {
 			{
 			GameObject CakeTwo = Instantiate(AttackCake, PosB.position, PosB.rotation) as GameObject;
 			CakeTwo.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 135f) * (Mathf.PI / 180f)),
-			                                           Mathf.Sin((transform.eulerAngles.z + 135f) * (Mathf.PI / 180f))) * 1f;
+			                                           Mathf.Sin((transform.eulerAngles.z + 135f) * (Mathf.PI / 180f))) * 3f;
 				CakeFireTwo = false;
 			}
 
@@ -54,7 +54,7 @@ public class OffensiveCake : Projectile {
 			{
 				GameObject CakeThree = Instantiate(AttackCake, PosC.position, PosC.rotation) as GameObject;
 				CakeThree.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z - 135f) * (Mathf.PI / 180f)),
-				                                           Mathf.Sin((transform.eulerAngles.z - 135f) * (Mathf.PI / 180f))) * 1f;
+				                                           Mathf.Sin((transform.eulerAngles.z - 135f) * (Mathf.PI / 180f))) * 3f;
 				CakeFireThree = false;
 			}
 
@@ -62,7 +62,7 @@ public class OffensiveCake : Projectile {
 			{
 				GameObject CakeFour = Instantiate(AttackCake, PosD.position, PosD.rotation) as GameObject;
 				CakeFour.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z - 45f) * (Mathf.PI / 180f)),
-				                                             Mathf.Sin((transform.eulerAngles.z - 45f) * (Mathf.PI / 180f))) * 1f;
+				                                             Mathf.Sin((transform.eulerAngles.z - 45f) * (Mathf.PI / 180f))) * 3f;
 				CakeFireFour = false;
 			}
 			

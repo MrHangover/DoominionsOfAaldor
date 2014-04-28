@@ -162,7 +162,7 @@ public class Patchi : Player {
 			CDAttackSpell();
 			GameObject Attack = Instantiate(AttackBall, AttackBallPos.position, AttackBallPos.rotation) as GameObject;
 			Attack.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
-			                                          Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 5f;
+			                                          Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 6f;
 
 		}
 
@@ -182,7 +182,7 @@ public class Patchi : Player {
 
 		if(movementCD < Time.time && UltTime < Time.time)
 		{
-			maxSpeed = 20f;
+			maxSpeed = 15f;
 			SpeedTimer();
 			CDSpeed();
 		}
