@@ -57,6 +57,37 @@ public class BlueMage : Player {
 
 			}
 		}
+
+		// UI stuff
+		if(offensiveCD > Time.time)
+		{
+			UIOffensiveCD = true;
+		} else {
+			UIOffensiveCD = false;
+		}
+		
+		if(defensiveCD > Time.time)
+		{
+			UIDefensiveCD = true;
+		} else {
+			UIDefensiveCD = false;
+		}
+		
+		if(movementCD > Time.time)
+		{
+			UIMovementCD = true;
+		} else {
+			UIMovementCD = false;
+		}
+		
+		if(ultCD > Time.time)
+		{
+			UIUltCD = true;
+		} else {
+			UIUltCD = false;
+		}
+
+		//UI stuff end
 	}
 	void CDAttackIce () {
 		normalCD = 0.5f + Time.time;

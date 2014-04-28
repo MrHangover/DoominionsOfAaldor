@@ -58,6 +58,39 @@ public class MrLink : Player {
 			linkAnimator.SetBool("isDamaged", true);
 		else
 			linkAnimator.SetBool("isDamaged", false);
+
+
+		// UI stuff
+
+		if(offensiveCD > Time.time)
+		{
+			UIOffensiveCD = true;
+		} else {
+			UIOffensiveCD = false;
+		}
+		
+		if(defensiveCD > Time.time)
+		{
+			UIDefensiveCD = true;
+		} else {
+			UIDefensiveCD = false;
+		}
+		
+		if(movementCD > Time.time)
+		{
+			UIMovementCD = true;
+		} else {
+			UIMovementCD = false;
+		}
+		
+		if(ultCD > Time.time)
+		{
+			UIUltCD = true;
+		} else {
+			UIUltCD = false;
+		}
+
+		// UI stuff end
 	}
 
 	protected override void NormalAttack(){
