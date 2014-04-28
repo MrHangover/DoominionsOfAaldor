@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OffensiveCake : MonoBehaviour {
+public class OffensiveCake : Projectile {
 	
 
 	float TimeCake = -1f;
@@ -69,7 +69,15 @@ public class OffensiveCake : MonoBehaviour {
 		}
 			
 	}
-	
+
+	protected override void OnCollisionEnter2D(Collision2D other){
+		if(other.gameObject.tag == "Enemy")
+			dealDamage(other.gameObject, 50, true, 10);
+	}
+
+	protected override void OnTriggerEnter2D(Collider2D other){
+		
+	}
 
 
 }

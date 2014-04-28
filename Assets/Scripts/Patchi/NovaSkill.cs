@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NovaSkill : MonoBehaviour {
+public class NovaSkill : Projectile {
 
 	// Use this for initialization
 	void Start () {
@@ -14,5 +14,14 @@ public class NovaSkill : MonoBehaviour {
 		transform.Rotate(0, 0, -0.5f);
 		transform.localScale += new Vector3 ((0f + 1f/6f),(0f + 1f/6f),0f);
 
+	}
+
+	protected override void OnTriggerEnter2D(Collider2D other){
+		if(other.gameObject.tag == "Enemy")
+			dealDamage(other.gameObject, 100, false, 0);
+	}
+
+	protected override void OnCollisionEnter2D(Collision2D other){
+		
 	}
 }

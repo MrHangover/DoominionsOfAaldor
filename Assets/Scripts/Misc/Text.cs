@@ -95,6 +95,8 @@ public class Text : MonoBehaviour {
 
 	void Next(){
 
+		ActivePlayer = GameObject.FindWithTag("Player");
+		Player Talk = ActivePlayer.GetComponent<Player>();
 
 		if(TextTwo && TextTwoDone)
 		{
@@ -112,6 +114,7 @@ public class Text : MonoBehaviour {
 		{
 			TextFour = false;
 
+			Talk.Speechset();
 			Begin = false;
 			Time.timeScale = 1f;
 			GameObject.DestroyObject(gameObject);

@@ -27,6 +27,9 @@ public class IceShard: Projectile {
 			Slow(other.gameObject,3f, 0.5f);
 	}
 
+	protected override void OnTriggerEnter2D(Collider2D other){
+		
+	}
 
 
 }

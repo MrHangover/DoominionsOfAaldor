@@ -14,4 +14,8 @@ public class SlingerShot : Projectile {
 		}
 		Destroy(this.gameObject);
 	}
+
+	protected override void OnTriggerEnter2D(Collider2D other){
+
+	}
 }

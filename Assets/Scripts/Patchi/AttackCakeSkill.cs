@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AttackCakeSkill : MonoBehaviour {
+public class AttackCakeSkill : Projectile {
 
 	public GameObject PlayerP;
 
@@ -12,15 +12,7 @@ public class AttackCakeSkill : MonoBehaviour {
 
 		Player script = PlayerP.GetComponent<Player>();
 		
-		/*if(Player.facingRight == true)
-		{
-			rigidbody2D.velocity = new Vector2(20,0);
-		}
-		
-		if(Player.facingRight == false)
-		{
-			rigidbody2D.velocity = new Vector2(20*-1,0);
-		}*/
+
 	}
 	
 	// Update is called once per frame
@@ -30,5 +22,14 @@ public class AttackCakeSkill : MonoBehaviour {
 
 	
 	
+	}
+
+	protected override void OnCollisionEnter2D(Collision2D other){
+		if(other.gameObject.tag == "Enemy")
+			dealDamage(other.gameObject, 10, true, 5);
+	}
+
+	protected override void OnTriggerEnter2D(Collider2D other){
+		
 	}
 }

@@ -11,6 +11,8 @@ public abstract class Projectile : MonoBehaviour {
 
 	protected abstract void OnCollisionEnter2D(Collision2D other);
 
+	protected abstract void OnTriggerEnter2D(Collider2D other);
+
 	protected void dealDamage(GameObject player, int damage, bool isKnockBacking, int knockBackForce = 0){
 		if(damageCD < Time.time){
 			Creature playerScript = player.GetComponent<Creature>();

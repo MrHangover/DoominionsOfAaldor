@@ -72,4 +72,7 @@ public abstract class Player : Creature {
 			Speech = false;
 		}
 	}
+
+
+
 }
