@@ -25,7 +25,7 @@ public class Select : MonoBehaviour {
 	}
 
 	void OnMouseUp(){
-		//UI Begin = Interface.GetComponent<UI>();
+		UI Begin = Interface.GetComponent<UI>();
 
 		GameObject Spawn = Instantiate(Player, SpawnPos.position, SpawnPos.rotation) as GameObject;
 		GameObject.Destroy (SelectObejct);
