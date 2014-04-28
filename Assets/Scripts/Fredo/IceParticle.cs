@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OrbShard2 : MonoBehaviour {
+public class IceParticle : MonoBehaviour {
 	
 	public GameObject PlayerF;
 	
 	// Use this for initialization
 	void Start () {
-		GameObject.DestroyObject(gameObject,1);
-		
+		GameObject.DestroyObject(gameObject,0.3f);
+
+
 		
 		Player script = PlayerF.GetComponent<Player>();
 		
@@ -17,8 +18,9 @@ public class OrbShard2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		transform.Rotate(0, 0, 0);
+
+
+		transform.Rotate(0, 0, 10);
 		
 		
 		
