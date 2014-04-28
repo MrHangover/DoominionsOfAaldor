@@ -5,12 +5,7 @@ public class Patchi : Player {
 	
 	public Animator animator;
 
-	float DefBallCD = 0;
-	float AttackCakeCD = 0;
-	float AttackBallCD = 0;
-	float SpeedCD = 0;
 	float SpeedTime = 0;
-	float UltCD = 0;
 	float UltTime = 0;
 
 	public GameObject DefBall;
@@ -51,7 +46,9 @@ public class Patchi : Player {
 			maxSpeed = 5f;
 		}
 
-
+		if(!Speech)
+		{
+		
 		if(Input.GetButton("Normal"))
 			NormalAttack();
 
@@ -66,6 +63,40 @@ public class Patchi : Player {
 
 		if(Input.GetButton("Ult"))
 			UltAbility();
+		
+		
+		if(offensiveCD > Time.time)
+		{
+			UIOffensiveCD = true;
+		} else {
+			UIOffensiveCD = false;
+			}
+
+		if(defensiveCD > Time.time)
+		{
+			UIDefensiveCD = true;
+		} else {
+				UIDefensiveCD = false;
+			}
+
+		if(movementCD > Time.time)
+		{
+			UIMovementCD = true;
+		} else {
+				UIMovementCD = false;
+			}
+
+		if(ultCD > Time.time)
+		{
+			UIUltCD = true;
+		} else {
+				UIUltCD = false;
+			}
+		
+		
+		
+		
+		}
 		
 	}
 
@@ -82,7 +113,7 @@ public class Patchi : Player {
 		return;
 	}
 
-	void CDAttackBall() {
+	void CDAttackSpell() {
 		offensiveCD = 5.0f + Time.time;
 		
 		return;
@@ -128,12 +159,11 @@ public class Patchi : Player {
 
 		if(offensiveCD < Time.time)
 		{
-			CDAttackBall();
+			CDAttackSpell();
 			GameObject Attack = Instantiate(AttackBall, AttackBallPos.position, AttackBallPos.rotation) as GameObject;
-			Attack.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 0f) * (Mathf.PI / 180f)),
-			                                        	Mathf.Sin(transform.eulerAngles.z * (Mathf.PI / 180f))) * 20f;
+			Attack.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
+			                                          Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 5f;
 
-				
 		}
 
 	}

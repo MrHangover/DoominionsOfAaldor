@@ -12,6 +12,8 @@ public class UI : MonoBehaviour {
 	string defensive = "Ready";
 	string ult = "Ready";
 
+
+
 	public bool Begin = false;
 
 	// Use this for initialization
@@ -31,35 +33,33 @@ public class UI : MonoBehaviour {
 		ActivePlayer = GameObject.FindWithTag("Player");
 		Player Timer = ActivePlayer.GetComponent<Player>();
 		
-		Debug.Log(Timer.offensiveCDTimer);
-		
-		if(Timer.offensiveCDTimer > 0f)
+	
+		if(Player.UIOffensiveCD)
 		{
-			Debug.Log ("lololo");
-			string offensive = "Test";
+			offensive = "Cooldown";
 		} else {
-			string offensive = "Ready";
+			offensive = "Ready";
 		}
 		
-		if(Timer.movementCDTimer > 0f)
+		if(Player.UIDefensiveCD)
 		{
-			float movement = Timer.movementCDTimer;
+			movement = "Cooldown";
 		} else {
-			string movement = "Ready";
+			movement = "Ready";
+		}
+	
+		if(Player.UIMovementCD)
+		{
+			defensive = "Cooldown";
+		} else {
+			defensive = "Ready";
 		}
 		
-		if(Timer.defensiveCDTimer > 0f)
+		if(Player.UIUltCD)
 		{
-			float offensive = Timer.defensiveCDTimer;
+			ult = "Cooldown";
 		} else {
-			string offensive = "Ready";
-		}
-		
-		if(Timer.ultCDTimer > 0f)
-		{
-			float offensive = Timer.ultCDTimer;
-		} else {
-			string offensive = "Ready";
+			ult = "Ready";
 		}
 	}
 
@@ -68,24 +68,24 @@ public class UI : MonoBehaviour {
 		if(Begin)
 			{
 
-				GUILayout.BeginArea(new Rect(800,750,400,Screen.width / 2));
+				GUILayout.BeginArea(new Rect(800,760,400,Screen.width / 2));
 
 				GUILayout.BeginHorizontal();
 
 				GUILayout.BeginVertical();
-				GUILayout.Label("Offensive");
+				GUILayout.Label("  Offensive");
 				GUILayout.EndVertical();
 
 				GUILayout.BeginVertical();
-				GUILayout.Label("Movement");
+				GUILayout.Label("  Defensive");
 				GUILayout.EndVertical();
 
 				GUILayout.BeginVertical();
-				GUILayout.Label("Defensive");
+				GUILayout.Label("  Movement");
 				GUILayout.EndVertical();
 
 				GUILayout.BeginVertical();
-				GUILayout.Label("Ultimate");
+				GUILayout.Label(" Ultimate");
 				GUILayout.EndVertical();
 
 				GUILayout.EndHorizontal();
@@ -94,19 +94,19 @@ public class UI : MonoBehaviour {
 				GUILayout.BeginHorizontal();
 				
 				GUILayout.BeginVertical();
-				GUI.Box(new Rect(0, 30, 50, 50), offensive);
+				GUI.Box(new Rect(0, 30, 80, 40), offensive);
 				GUILayout.EndVertical();
 				
 				GUILayout.BeginVertical();
-				GUI.Box(new Rect(100, 30, 50, 50), movement);
+				GUI.Box(new Rect(100, 30, 80, 40), movement);
 				GUILayout.EndVertical();
 				
 				GUILayout.BeginVertical();
-				GUI.Box(new Rect(200, 30, 50, 50), defensive);
+				GUI.Box(new Rect(200, 30, 80, 40), defensive);
 				GUILayout.EndVertical();
 				
 				GUILayout.BeginVertical();
-				GUI.Box(new Rect(300, 30, 50, 50), ult);
+				GUI.Box(new Rect(300, 30, 80, 40), ult);
 				GUILayout.EndVertical();
 				
 				GUILayout.EndHorizontal();

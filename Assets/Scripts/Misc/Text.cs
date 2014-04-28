@@ -41,7 +41,7 @@ public class Text : MonoBehaviour {
 			Talk.Speechset();
 			Begin = true;
 			NextTimer = 100f + Time.time;
-			Time.timeScale = 0.00001f;
+			Time.timeScale = 0.00006f;
 		}
 
 	}
@@ -111,8 +111,10 @@ public class Text : MonoBehaviour {
 		if(TextFour && TextFourDone)
 		{
 			TextFour = false;
+
 			Begin = false;
 			Time.timeScale = 1f;
+			GameObject.DestroyObject(gameObject);
 		}
 			
 
