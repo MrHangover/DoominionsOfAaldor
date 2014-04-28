@@ -131,12 +131,9 @@ public class Patchi : Player {
 			CDAttackBall();
 			GameObject Attack = Instantiate(AttackBall, AttackBallPos.position, AttackBallPos.rotation) as GameObject;
 			Attack.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 0f) * (Mathf.PI / 180f)),
-			                                          Mathf.Sin(transform.eulerAngles.z * (Mathf.PI / 180f))) * 20f;
-			/*
-				GameObject Attack2 = Instantiate(AttackBall, AttackBallPos.position, AttackBallPos.rotation) as GameObject;
-				Attack2.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 10) * (Mathf.PI / 180f)),
-				                                          Mathf.Sin(transform.eulerAngles.z * (Mathf.PI / 180f))) * 20f;
-				*/
+			                                        	Mathf.Sin(transform.eulerAngles.z * (Mathf.PI / 180f))) * 20f;
+
+				
 		}
 
 	}
