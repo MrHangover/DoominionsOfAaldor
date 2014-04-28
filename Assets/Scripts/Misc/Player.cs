@@ -24,7 +24,7 @@ public abstract class Player : Creature {
 		moveV = Input.GetAxis ("Vertical");
 
 		if(canMove){
-			rigidbody2D.velocity = new Vector2(moveH * maxSpeed, moveV * maxSpeed);
+			rigidbody2D.velocity = new Vector2(moveH * maxSpeed * slow, moveV * maxSpeed * slow);
 		}
 
 		if(rigidbody2D.velocity.x != 0f || rigidbody2D.velocity.y != 0f){
@@ -35,6 +35,9 @@ public abstract class Player : Creature {
 
 		if(!canMove && stunnedCD < Time.time)
 			canMove = true;
+
+		if(slowDuration < Time.time)
+			slow = 1f;
 	}
 
 	void Update ()

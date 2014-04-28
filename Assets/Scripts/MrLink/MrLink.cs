@@ -54,7 +54,7 @@ public class MrLink : Player {
 			defStackTime = Time.time + 20f;
 		}
 
-		if(immunityCD > Time.time)
+		if(immunityCD > Time.time && ultActiveTime < Time.time)
 			linkAnimator.SetBool("isDamaged", true);
 		else
 			linkAnimator.SetBool("isDamaged", false);
@@ -146,6 +146,7 @@ public class MrLink : Player {
 			ultActiveTime = 16f + Time.time;
 			immunityCD = 16f + Time.time;
 			knockBackCD = 16f + Time.time;
+			slowCD = 16f + Time.time;
 			linkAnimator.SetBool("isUlting", true);
 			linkAnimator.SetTrigger("ult");
 			GameObject bigYo = Instantiate(ultYo, transform.position, transform.rotation) as GameObject;

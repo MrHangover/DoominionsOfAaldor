@@ -23,4 +23,9 @@ public abstract class Weapon : MonoBehaviour {
 		Projectile projectileScript = projectile.GetComponent<Projectile>();
 		projectileScript.KnockBack(knockBack);
 	}
+
+	protected void Slow(GameObject target, float duration, float amount){
+		Creature enemy = target.GetComponent<Creature>();
+		enemy.Slow(duration, amount);
+	}
 }

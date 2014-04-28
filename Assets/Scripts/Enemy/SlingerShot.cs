@@ -12,7 +12,6 @@ public class SlingerShot : Projectile {
 		if(other.gameObject.tag == "Player"){
 			dealDamage(other.gameObject, 6, false);
 		}
-		if(other.gameObject.tag != "Enemy")
-			Destroy(this.gameObject);
+		Destroy(this.gameObject);
 	}
 }
