@@ -44,6 +44,7 @@ public class BlueMage : Player {
 
 
 
+
 	// Use this for initialization
 	void Start () {
 		maxSpeed = 5f;
@@ -130,7 +131,56 @@ public class BlueMage : Player {
 			normalCD = Time.time + 0.5f;
 		}
 	}
+	private void NovaTop(){
+		GameObject NovaShard1 = Instantiate(Nova, NovaPos1.position, NovaPos1.rotation) as GameObject;
+		NovaShard1.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
+		                                              Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 20f;
+		GameObject NovaShard2 = Instantiate(Nova, NovaPos2.position, NovaPos2.rotation) as GameObject;
+		NovaShard2.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 112.5f) * (Mathf.PI / 180f)),
+		                                              Mathf.Sin((transform.eulerAngles.z + 112.5f) * (Mathf.PI / 180f))) * 20f;
+		GameObject NovaShard3 = Instantiate(Nova, NovaPos3.position, NovaPos3.rotation) as GameObject;
+		NovaShard3.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 135f) * (Mathf.PI / 180f)),
+		                                              Mathf.Sin((transform.eulerAngles.z + 135f) * (Mathf.PI / 180f))) * 20f;
+		GameObject NovaShard4 = Instantiate(Nova, NovaPos4.position, NovaPos4.rotation) as GameObject;
+		NovaShard4.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 157.5f) * (Mathf.PI / 180f)),
+		                                              Mathf.Sin((transform.eulerAngles.z + 157.5f) * (Mathf.PI / 180f))) * 20f;
+		GameObject NovaShard5 = Instantiate(Nova, NovaPos5.position, NovaPos5.rotation) as GameObject;
+		NovaShard5.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 180f) * (Mathf.PI / 180f)),
+		                                              Mathf.Sin((transform.eulerAngles.z + 180f) * (Mathf.PI / 180f))) * 20f;
+		GameObject NovaShard6 = Instantiate(Nova, NovaPos6.position, NovaPos6.rotation) as GameObject;
+		NovaShard6.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 202.5f) * (Mathf.PI / 180f)),
+		                                              Mathf.Sin((transform.eulerAngles.z + 202.5f) * (Mathf.PI / 180f))) * 20f;
+		GameObject NovaShard7 = Instantiate(Nova, NovaPos7.position, NovaPos7.rotation) as GameObject;
+		NovaShard7.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 225f) * (Mathf.PI / 180f)),
+		                                              Mathf.Sin((transform.eulerAngles.z + 225f) * (Mathf.PI / 180f))) * 20f;
+		GameObject NovaShard8 = Instantiate(Nova, NovaPos8.position, NovaPos8.rotation) as GameObject;
+		NovaShard8.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 247.5f) * (Mathf.PI / 180f)),
+		                                              Mathf.Sin((transform.eulerAngles.z + 247.5f) * (Mathf.PI / 180f))) * 20f;
+		}
 
+	private void NovaBot(){
+		GameObject NovaShard9 = Instantiate(Nova, NovaPos9.position, NovaPos9.rotation) as GameObject;
+		NovaShard9.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 270f) * (Mathf.PI / 180f)),
+		                                              Mathf.Sin((transform.eulerAngles.z + 270f) * (Mathf.PI / 180f))) * 20f;
+		GameObject NovaShard10 = Instantiate(Nova, NovaPos10.position, NovaPos10.rotation) as GameObject;
+		NovaShard10.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 285.5f) * (Mathf.PI / 180f)),
+		                                               Mathf.Sin((transform.eulerAngles.z + 285.5f) * (Mathf.PI / 180f))) * 20f;
+		GameObject NovaShard11 = Instantiate(Nova, NovaPos11.position, NovaPos11.rotation) as GameObject;
+		NovaShard11.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 315f) * (Mathf.PI / 180f)),
+		                                               Mathf.Sin((transform.eulerAngles.z + 315f) * (Mathf.PI / 180f))) * 20f;
+		GameObject NovaShard12 = Instantiate(Nova, NovaPos12.position, NovaPos12.rotation) as GameObject;
+		NovaShard12.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 1f) * (Mathf.PI / 180f)),
+		                                               Mathf.Sin((transform.eulerAngles.z + 1f) * (Mathf.PI / 180f))) * 20f;
+		GameObject NovaShard13 = Instantiate(Nova, NovaPos13.position, NovaPos13.rotation) as GameObject;
+		NovaShard13.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 22.5f) * (Mathf.PI / 180f)),
+		                                               Mathf.Sin((transform.eulerAngles.z + 22.5f) * (Mathf.PI / 180f))) * 20f;
+		GameObject NovaShard14 = Instantiate(Nova, NovaPos14.position, NovaPos4.rotation) as GameObject;
+		NovaShard14.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 45f) * (Mathf.PI / 180f)),
+		                                               Mathf.Sin((transform.eulerAngles.z + 45f) * (Mathf.PI / 180f))) * 20f;
+		GameObject NovaShard15 = Instantiate(Nova, NovaPos15.position, NovaPos15.rotation) as GameObject;
+		NovaShard15.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 67.5f) * (Mathf.PI / 180f)),
+		                                               Mathf.Sin((transform.eulerAngles.z + 67.5f) * (Mathf.PI / 180f))) * 20f;
+		}
 
 	protected override void OffensiveAbility(){
 		if(offensiveCD <= Time.time){
@@ -147,51 +197,10 @@ public class BlueMage : Player {
 	
 	protected override void DefensiveAbility(){
 		if(defensiveCD <= Time.time){
-			GameObject NovaShard1 = Instantiate(Nova, NovaPos1.position, NovaPos1.rotation) as GameObject;
-			NovaShard1.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
-			                                            Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 20f;
-			GameObject NovaShard2 = Instantiate(Nova, NovaPos2.position, NovaPos2.rotation) as GameObject;
-			NovaShard2.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 112.5f) * (Mathf.PI / 180f)),
-			                                             Mathf.Sin((transform.eulerAngles.z + 112.5f) * (Mathf.PI / 180f))) * 20f;
-			GameObject NovaShard3 = Instantiate(Nova, NovaPos3.position, NovaPos3.rotation) as GameObject;
-			NovaShard3.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 135f) * (Mathf.PI / 180f)),
-			                                             Mathf.Sin((transform.eulerAngles.z + 135f) * (Mathf.PI / 180f))) * 20f;
-			GameObject NovaShard4 = Instantiate(Nova, NovaPos4.position, NovaPos4.rotation) as GameObject;
-			NovaShard4.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 157.5f) * (Mathf.PI / 180f)),
-			                                             Mathf.Sin((transform.eulerAngles.z + 157.5f) * (Mathf.PI / 180f))) * 20f;
-			GameObject NovaShard5 = Instantiate(Nova, NovaPos5.position, NovaPos5.rotation) as GameObject;
-			NovaShard5.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 180f) * (Mathf.PI / 180f)),
-			                                             Mathf.Sin((transform.eulerAngles.z + 180f) * (Mathf.PI / 180f))) * 20f;
-			GameObject NovaShard6 = Instantiate(Nova, NovaPos6.position, NovaPos6.rotation) as GameObject;
-			NovaShard6.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 202.5f) * (Mathf.PI / 180f)),
-			                                             Mathf.Sin((transform.eulerAngles.z + 202.5f) * (Mathf.PI / 180f))) * 20f;
-			GameObject NovaShard7 = Instantiate(Nova, NovaPos7.position, NovaPos7.rotation) as GameObject;
-			NovaShard7.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 225f) * (Mathf.PI / 180f)),
-			                                             Mathf.Sin((transform.eulerAngles.z + 225f) * (Mathf.PI / 180f))) * 20f;
-			GameObject NovaShard8 = Instantiate(Nova, NovaPos8.position, NovaPos8.rotation) as GameObject;
-			NovaShard8.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 247.5f) * (Mathf.PI / 180f)),
-			                                             Mathf.Sin((transform.eulerAngles.z + 247.5f) * (Mathf.PI / 180f))) * 20f;
-			GameObject NovaShard9 = Instantiate(Nova, NovaPos9.position, NovaPos9.rotation) as GameObject;
-			NovaShard9.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 270f) * (Mathf.PI / 180f)),
-			                                             Mathf.Sin((transform.eulerAngles.z + 270f) * (Mathf.PI / 180f))) * 20f;
-			GameObject NovaShard10 = Instantiate(Nova, NovaPos10.position, NovaPos10.rotation) as GameObject;
-			NovaShard10.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 292.5f) * (Mathf.PI / 180f)),
-			                                             Mathf.Sin((transform.eulerAngles.z + 292.5f) * (Mathf.PI / 180f))) * 20f;
-			GameObject NovaShard11 = Instantiate(Nova, NovaPos11.position, NovaPos11.rotation) as GameObject;
-			NovaShard11.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 315f) * (Mathf.PI / 180f)),
-			                                             Mathf.Sin((transform.eulerAngles.z + 315f) * (Mathf.PI / 180f))) * 20f;
-			GameObject NovaShard12 = Instantiate(Nova, NovaPos12.position, NovaPos12.rotation) as GameObject;
-			NovaShard12.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 0f) * (Mathf.PI / 180f)),
-			                                             Mathf.Sin((transform.eulerAngles.z + 0f) * (Mathf.PI / 180f))) * 20f;
-			GameObject NovaShard13 = Instantiate(Nova, NovaPos13.position, NovaPos13.rotation) as GameObject;
-			NovaShard13.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 22.5f) * (Mathf.PI / 180f)),
-			                                             Mathf.Sin((transform.eulerAngles.z + 22.5f) * (Mathf.PI / 180f))) * 20f;
-			GameObject NovaShard14 = Instantiate(Nova, NovaPos14.position, NovaPos4.rotation) as GameObject;
-			NovaShard14.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 45f) * (Mathf.PI / 180f)),
-			                                             Mathf.Sin((transform.eulerAngles.z + 45f) * (Mathf.PI / 180f))) * 20f;
-			GameObject NovaShard15 = Instantiate(Nova, NovaPos15.position, NovaPos15.rotation) as GameObject;
-			NovaShard15.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 67.5f) * (Mathf.PI / 180f)),
-			                                             Mathf.Sin((transform.eulerAngles.z + 67.5f) * (Mathf.PI / 180f))) * 20f;
+
+			NovaTop();
+			NovaBot();
+
 			defensiveCD = Time.time +10f;
 		}
 	}
