@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class AISlinger : Enemy{
-
-
+	
 	Vector2 moveDirection;
 	Collider2D playerDetected;
 	bool canFire = true;
