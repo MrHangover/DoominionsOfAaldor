@@ -21,13 +21,7 @@ public class OffensiveCake : Projectile {
 	// Use this for initialization
 	void Start () {
 		GameObject.DestroyObject(gameObject,0.52f);
-
-
 		TimeCake = 0.5f + Time.time;
-
-	
-
-
 	}
 	
 	// Update is called once per frame

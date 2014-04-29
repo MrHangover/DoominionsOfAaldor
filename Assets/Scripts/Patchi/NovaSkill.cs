@@ -10,10 +10,8 @@ public class NovaSkill : Weapon {
 	
 	// Update is called once per frame
 	void Update () {
-
 		transform.Rotate(0, 0, -0.5f);
 		transform.localScale += new Vector3 ((0f + 1f/6f),(0f + 1f/6f),0f);
-
 	}
 
 	protected override void OnTriggerEnter2D(Collider2D other){

@@ -1,26 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TextOne : MonoBehaviour {
-
+public class textTwo : MonoBehaviour {
 
 	
 	GameObject ActivePlayer;
+	public string leveltoLoad;
 	
 	bool Begin = false;
 	
-	string stringToEdit = "Mystery Man: Stop right there bla bla";
+	string stringToEdit = "You: I did it!.. Bla bla";
 	
 	bool TextTwo = true;
 	bool TextTwoDone = false;
-	
-	bool TextThree = false;
-	bool TextThreeDone = false;
-	
-	bool TextFour = false;
-	bool TextFourDone = false;
+
 	
 	float NextTimer = -1f;
+
 
 	// Use this for initialization
 	void Start () {
@@ -67,21 +63,13 @@ public class TextOne : MonoBehaviour {
 				
 				if(TextTwo)
 				{
-					stringToEdit = "You: What wrong bla bla";
+					stringToEdit = "Thanks for playing our game.. bla bla";
 					Done ();
 				}
 				
-				if(TextThree)
-				{
-					stringToEdit = "Mastery Man: Bla bla bla";
-					Done ();
-				}
 				
-				if(TextFour)
-				{
-					stringToEdit = "You: I will fight my way out.. bla bla.. og mere bla";
-					Done ();
-				}
+				
+				
 				
 			}
 			
@@ -101,25 +89,19 @@ public class TextOne : MonoBehaviour {
 		
 		if(TextTwo && TextTwoDone)
 		{
-			TextThree = true;
 			TextTwo = false;
-		}
-		
-		if(TextThree && TextThreeDone)
-		{
-			TextFour = true;
-			TextThree = false;
-		}
-		
-		if(TextFour && TextFourDone)
-		{
-			TextFour = false;
 			
 			Talk.Speechset();
 			Begin = false;
 			Time.timeScale = 1f;
 			GameObject.DestroyObject(gameObject);
+			Application.LoadLevel(leveltoLoad);
 		}
+		
+		
+		
+		
+		
 		
 		
 		
@@ -135,17 +117,9 @@ public class TextOne : MonoBehaviour {
 			TextTwoDone = true;
 		}
 		
-		if(TextThree && !TextThreeDone)
-		{
-			NextTimer = 0.00001f + Time.time;
-			TextThreeDone = true;
-		}
 		
-		if(TextFour && !TextFourDone)
-		{
-			NextTimer = 0.00001f + Time.time;
-			TextFourDone = true;
-		}
+		
+		
 		
 	}
 }

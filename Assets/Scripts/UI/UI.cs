@@ -30,36 +30,39 @@ public class UI : MonoBehaviour {
 
 	void FixedUpdate ()
 	{
-		ActivePlayer = GameObject.FindWithTag("Player");
-		Player Timer = ActivePlayer.GetComponent<Player>();
+		if(Begin)
+		{
+			ActivePlayer = GameObject.FindWithTag("Player");
+			Player Timer = ActivePlayer.GetComponent<Player>();
+			
 		
-	
-		if(Player.UIOffensiveCD)
-		{
-			offensive = "Cooldown";
-		} else {
-			offensive = "Ready";
-		}
+			if(Player.UIOffensiveCD)
+			{
+				offensive = "Cooldown";
+			} else {
+				offensive = "Ready";
+			}
+			
+			if(Player.UIDefensiveCD)
+			{
+				movement = "Cooldown";
+			} else {
+				movement = "Ready";
+			}
 		
-		if(Player.UIDefensiveCD)
-		{
-			movement = "Cooldown";
-		} else {
-			movement = "Ready";
-		}
-	
-		if(Player.UIMovementCD)
-		{
-			defensive = "Cooldown";
-		} else {
-			defensive = "Ready";
-		}
-		
-		if(Player.UIUltCD)
-		{
-			ult = "Cooldown";
-		} else {
-			ult = "Ready";
+			if(Player.UIMovementCD)
+			{
+				defensive = "Cooldown";
+			} else {
+				defensive = "Ready";
+			}
+			
+			if(Player.UIUltCD)
+			{
+				ult = "Cooldown";
+			} else {
+				ult = "Ready";
+			}
 		}
 	}
 
