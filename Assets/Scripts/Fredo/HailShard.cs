@@ -6,8 +6,8 @@ public class HailShard : Projectile { //HailShard is a Projectile
 	
 	// Use this for initialization
 	void Start () {
-		GameObject.DestroyObject(gameObject,0.3f);
-		//The object is destroyed 0.3 seconds after it spawned
+		GameObject.DestroyObject(gameObject,0.4f);
+		//The object is destroyed 0.4 seconds after it spawned
 		
 		
 	}
@@ -22,8 +22,8 @@ public class HailShard : Projectile { //HailShard is a Projectile
 		if (other.gameObject.tag == "Enemy") {
 						dealDamage (other.gameObject, 3, true, 5);
 						Slow (other.gameObject, 1.5f, 0.75f);
-						//Destroy (GameObject); //Destroys the projectile upon impact
 				}
+		Destroy (this.gameObject); //Destroys the projectile upon impact
 	}
 	//As the hailshard is a projectile, it needs additional info:
 	//It targets objects of type "Enemy"
