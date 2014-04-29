@@ -5,8 +5,8 @@ public class OrbShard : Projectile { //OrbShard is a Projectile
 
 	// Use this for initialization
 	void Start () {
-		GameObject.DestroyObject(gameObject,0.45f);
-		//The OrbShard despawns after 0.45seconds
+		GameObject.DestroyObject(gameObject,0.55f);
+		//The OrbShard despawns after 0.55seconds
 	}
 	
 	// Update is called once per frame
@@ -18,8 +18,8 @@ public class OrbShard : Projectile { //OrbShard is a Projectile
 		if (other.gameObject.tag == "Enemy") {
 						dealDamage (other.gameObject, 1, false);
 						Slow (other.gameObject, 4f, 0.3f);
-						//Destroy (GameObject); //Destroys the projectile upon impact
 				}
+		Destroy (this.gameObject); //Destroys the projectile upon impact
 	}
 
 	//As the Orb shard is a projectile, it needs additional info:

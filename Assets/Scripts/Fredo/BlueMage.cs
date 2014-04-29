@@ -65,9 +65,9 @@ public class BlueMage : Player { //The class "BlueMage" is a "Player"
 			UltAbility(); //The buttons for the different spells - These are assigned on the "base" player class
 
 		if(moveActiveTime >= Time.time){
-			maxSpeed = Mathf.Lerp(5f, 25f, (15f - (moveActiveTime - Time.time))/15f);
+			maxSpeed = Mathf.Lerp(5f, 20f, (7f - (moveActiveTime - Time.time))/7f);
 			InvokeRepeating("IcePart",1f,1.5f);
-		} //This is used for the movement ability: When the spell is activated, the speed of the player will gradually increase from 5 to 25 (at a rate of roughly 1.3f / sec)
+		} //This is used for the movement ability: When the spell is activated, the speed of the player will gradually increase from 5 to 20 (at a rate of roughly 2.14f / sec)
 			// Every time the function is run, it will also call the "InvokeRepeating" function, meaning that the function "IcePart" will be called after 1 second, and then again every 1.5 seconds
 				// This is called multiple times throughout the function, making the effect gradually more intense
 		if(maxSpeed > 5f){
@@ -202,10 +202,10 @@ public class BlueMage : Player { //The class "BlueMage" is a "Player"
 	protected override void MovementAbility(){
 		if(movementCD <= Time.time){
 
-			moveActiveTime = 16f + Time.time;
-			//The ability is active for 16 seconds
+			moveActiveTime = 7f + Time.time;
+			//The ability is active for 7 seconds
 
-			movementCD = Time.time+41f; //It has a 41 seconds cooldown - which translates into 25 seconds, after the last activation has expired
+			movementCD = Time.time+32f; //It has a 32 seconds cooldown - which translates into 25 seconds, after the last activation has expired
 			//When the movement speed ability is activated, it will set the moveActiveTime variable to 16(+time), which in turn activates the associated speed increase and particle spawners
 		}
 	}

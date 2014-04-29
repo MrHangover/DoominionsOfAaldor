@@ -25,8 +25,8 @@ public class IceShard: Projectile { //IceShard is a Projectile
 		if (other.gameObject.tag == "Enemy") {
 						dealDamage (other.gameObject, 4, true, 2);
 						Slow (other.gameObject, 3f, 0.45f);
-						//Destroy (GameObject); //Destroys the projectile upon impact
 				}
+		Destroy (this.gameObject); //Destroys the projectile upon impact
 	}
 	//As the iceshard is a projectile, it needs additional info:
 	//It targets objects of type "Enemy"
