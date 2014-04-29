@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OrbofIce : MonoBehaviour {
+public class OrbofIce : MonoBehaviour { //OrbofIce is not a projectile as per se, hence it's classified as "MonoBehaviour"
 	
-	public GameObject PlayerF; 
+
 	// Use this for initialization
 
 	public GameObject AttackIce;
@@ -14,10 +14,10 @@ public class OrbofIce : MonoBehaviour {
 	public Transform AttackIcePos5;
 	public Transform AttackIcePos6;
 	public Transform AttackIcePos7;
-	public Transform AttackIcePos8;
+	public Transform AttackIcePos8; //The 8 spawn points for the orb, as well as a reference to the gameobject known as "AttackIce" in this script
 
 	
-	private void Orb1(){
+	private void Orb1(){ //Commented at bottom
 			GameObject OrbShard = Instantiate (AttackIce, AttackIcePos1.position, AttackIcePos1.rotation) as GameObject;
 			OrbShard.rigidbody2D.velocity = new Vector2 (Mathf.Cos ((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
 		                                            Mathf.Sin ((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 15f;
@@ -59,12 +59,13 @@ public class OrbofIce : MonoBehaviour {
 		GameObject OrbShard = Instantiate (AttackIce, AttackIcePos8.position, AttackIcePos8.rotation) as GameObject;
 			OrbShard.rigidbody2D.velocity = new Vector2 (Mathf.Cos ((transform.eulerAngles.z + 135f) * (Mathf.PI / 180f)),
 		                                            Mathf.Sin ((transform.eulerAngles.z + 135f) * (Mathf.PI / 180f))) * 15f;
-		}
+		} //Each of the 8 spawn points got their own function, each time the function is called, an OrbShard is spawned at the appropriate spawnpoint
+			//at an appropriate angle (45 degrees in between each other). The Shard is shot at speed 15.
 	
 	
 	void Start () {
 		GameObject.DestroyObject(gameObject,2.1f);
-		
+		// The orb is destroyed after 2.1 seconds
 		InvokeRepeating ("Orb1", 0.5f, 0.1f);
 		InvokeRepeating ("Orb2", 0.5f, 0.1f);
 		InvokeRepeating ("Orb3", 0.5f, 0.1f);
@@ -73,6 +74,7 @@ public class OrbofIce : MonoBehaviour {
 		InvokeRepeating ("Orb6", 0.5f, 0.1f);
 		InvokeRepeating ("Orb7", 0.5f, 0.1f);
 		InvokeRepeating ("Orb8", 0.5f, 0.1f);
+		//After 0.5 seconds, the 8 functions will each be called every 0.1 seconds
 
 		InvokeRepeating ("Orb1", 2f, 0.03f);
 		InvokeRepeating ("Orb2", 2f, 0.03f);
@@ -82,8 +84,10 @@ public class OrbofIce : MonoBehaviour {
 		InvokeRepeating ("Orb6", 2f, 0.03f);
 		InvokeRepeating ("Orb7", 2f, 0.03f);
 		InvokeRepeating ("Orb8", 2f, 0.03f);
+		//After 2 seconds, the orb will fire a shard every 0.03 seconds, from every spawn point, in addition to the 'normal' spawn rate
+		//This gives the orb the final burst of projectiles, before being despawned.
 		
-		Player script = PlayerF.GetComponent<Player>();
+	
 		
 	}
 	// Update is called once per frame
@@ -91,7 +95,7 @@ public class OrbofIce : MonoBehaviour {
 		
 		
 		
-		transform.Rotate (0,0,-15f);
+		transform.Rotate (0,0,-15f); //The Orb rotates around it's z-axis
 	}
-	// Rotates the Orb
+
 }

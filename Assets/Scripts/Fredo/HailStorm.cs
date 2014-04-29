@@ -1,40 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HailStorm : MonoBehaviour {
-	
-	public GameObject PlayerF;
+public class HailStorm : MonoBehaviour { //The HailStorm is of the type "MonoBehaviour"
 
 	public GameObject AttackIce;
-	public Transform AttackIcePos1;
-	
-//	public GameObject AttackIce2;
-	public Transform AttackIcePos2;
-	
-//	public GameObject AttackIce3;
-	public Transform AttackIcePos3;
-	
-//	public GameObject AttackIce4;
-	public Transform AttackIcePos4;
-	
-//	public GameObject AttackIce5;
-	public Transform AttackIcePos5;
-	
-//	public GameObject AttackIce6;
-	public Transform AttackIcePos6;
-	
-//	public GameObject AttackIce7;
-	public Transform AttackIcePos7;
-	
-//	public GameObject AttackIce8;
-	public Transform AttackIcePos8;
-
 	public GameObject AttackOrb;
+	public Transform AttackIcePos1;
+	public Transform AttackIcePos2;
+	public Transform AttackIcePos3;
+	public Transform AttackIcePos4;
+	public Transform AttackIcePos5;
+	public Transform AttackIcePos6;
+	public Transform AttackIcePos7;
+	public Transform AttackIcePos8; //The different spawn points, and the two kinds of projectile references
 
-	float rotations = 3f;
+	float rotations = 3f; //Initial rotation value, used later on
 
-	GameObject player;
+	GameObject player; //Reference to the gameobject called "player", used later on
 
+	//Maaaaaany functions: All of them spawns a projectile, at an assigned position
+	//8 spawning projectiles of type "HailShard", 8 spawning projectiles of type "OrbShard"
 	private void Hail1(){
 		GameObject HailShard = Instantiate (AttackIce, AttackIcePos1.position, AttackIcePos1.rotation) as GameObject;
 		HailShard.rigidbody2D.velocity = new Vector2 (Mathf.Cos ((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
@@ -124,15 +109,15 @@ public class HailStorm : MonoBehaviour {
 	
 	private void rot(){
 		rotations += 1.5f;
-	}
+	} //Rotation function - It adds 1.5f to the rotation value, every time it is called
 
 	// Use this for initialization
 	void Start () {
 		GameObject.DestroyObject(gameObject,16f);
+		// The HailStorm lasts for 16 seconds
+		player = GameObject.FindWithTag("Player"); //Searches for the gameobject with the tag "Player", again used later on
 
-		player = GameObject.FindWithTag("Player");
-
-		InvokeRepeating ("rot", 1f, 0.5f);
+		InvokeRepeating ("rot", 1f, 0.5f); //After 1 second, and every 0.5 seconds, the function "rot" will be called, increasing the rotation of the storm
 
 		InvokeRepeating ("Hail1", 1f, 2f);
 		InvokeRepeating ("Hail2", 2.7f, 1.8f);
@@ -142,7 +127,6 @@ public class HailStorm : MonoBehaviour {
 		InvokeRepeating ("Hail6", 7.5f, 0.9f);
 		InvokeRepeating ("Hail7", 10f, 0.5f);
 		InvokeRepeating ("Hail8", 12.5f, 0.2f);
-
 		InvokeRepeating ("Hail8", 12f, 0.2f);
 		InvokeRepeating ("Hail4", 10.7f, 0.4f);
 		InvokeRepeating ("Hail2", 7.6f, 0.87f);
@@ -151,6 +135,7 @@ public class HailStorm : MonoBehaviour {
 		InvokeRepeating ("Hail7", 3.42f, 1.56f);
 		InvokeRepeating ("Hail6", 2.3f, 1.7f);
 		InvokeRepeating ("Hail1", 1.2f, 1.95f);
+		//A gradually increasing amount of "hail shard" functions are called, each firing more often than the previous
 
 		InvokeRepeating ("Orb1", 12.7f, 0.3f);
 		InvokeRepeating ("Orb2", 9.7f, 0.65f);
@@ -160,7 +145,6 @@ public class HailStorm : MonoBehaviour {
 		InvokeRepeating ("Orb6", 3.7f, 1.6f);
 		InvokeRepeating ("Orb7", 2.5f, 1.7f);
 		InvokeRepeating ("Orb8", 1.2f, 1.9f);
-
 		InvokeRepeating ("Orb8", 1.7f, 1.85f);
 		InvokeRepeating ("Orb4", 2.7f, 1.65f);
 		InvokeRepeating ("Orb7", 3.2f, 1.54f);
@@ -169,7 +153,7 @@ public class HailStorm : MonoBehaviour {
 		InvokeRepeating ("Orb2", 7.7f, 1.2f);
 		InvokeRepeating ("Orb5", 9.5f, 0.65f);
 		InvokeRepeating ("Orb1", 10.2f, 0.3f);
-
+		//A gradually increasing amount of "orb shard" functions are called, each firing more often than the previous
 		InvokeRepeating ("Orb1", 15.9f, 0.05f);
 		InvokeRepeating ("Orb2", 15.9f, 0.05f);
 		InvokeRepeating ("Orb3", 15.9f, 0.05f);
@@ -178,10 +162,12 @@ public class HailStorm : MonoBehaviour {
 		InvokeRepeating ("Orb6", 15.9f, 0.05f);
 		InvokeRepeating ("Orb7", 15.9f, 0.05f);
 		InvokeRepeating ("Orb8", 15.9f, 0.05f);
+		//After 15.9 seconds, all of the Orb functions are called every 0.05 seconds, giving a final burst of projectiles
 
+		//The reason the functions are called in this manner, is to give the impression of a storm that gradually intensifies (shown by the rotation as well)
+		//Shooting out projectiles seemingly at random
 
-
-		Player script = PlayerF.GetComponent<Player>();
+		//Player script = PlayerF.GetComponent<Player>();
 		
 		
 	}
@@ -190,8 +176,8 @@ public class HailStorm : MonoBehaviour {
 	void Update () {
 
 
-		transform.Rotate(0, 0, rotations);
-		transform.position = player.transform.position;
+		transform.Rotate(0, 0, rotations); //the rotation of the storm is a variable
+		transform.position = player.transform.position; //The position of the storm is altered to be that of the player, every update - making it follow him
 		
 		
 	}
