@@ -15,9 +15,11 @@ public class OrbShard : Projectile { //OrbShard is a Projectile
 		transform.Rotate(0, 0, 0);	// it does not rotate
 	}
 	protected override void OnCollisionEnter2D(Collision2D other){
-		if(other.gameObject.tag == "Enemy")
-			dealDamage(other.gameObject, 1, false);
-			Slow(other.gameObject,4f, 0.3f);
+		if (other.gameObject.tag == "Enemy") {
+						dealDamage (other.gameObject, 1, false);
+						Slow (other.gameObject, 4f, 0.3f);
+						//Destroy (GameObject); //Destroys the projectile upon impact
+				}
 	}
 
 	//As the Orb shard is a projectile, it needs additional info:

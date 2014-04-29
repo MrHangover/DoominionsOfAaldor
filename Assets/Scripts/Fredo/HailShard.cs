@@ -19,9 +19,11 @@ public class HailShard : Projectile { //HailShard is a Projectile
 	}
 
 	protected override void OnCollisionEnter2D(Collision2D other){
-		if(other.gameObject.tag == "Enemy")
-			dealDamage(other.gameObject, 3, true, 5);
-			Slow(other.gameObject,1.5f, 0.75f);
+		if (other.gameObject.tag == "Enemy") {
+						dealDamage (other.gameObject, 3, true, 5);
+						Slow (other.gameObject, 1.5f, 0.75f);
+						//Destroy (GameObject); //Destroys the projectile upon impact
+				}
 	}
 	//As the hailshard is a projectile, it needs additional info:
 	//It targets objects of type "Enemy"
