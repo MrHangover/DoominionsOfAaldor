@@ -39,6 +39,7 @@ public class Chaser : Enemy {
 		
 		if(canMove){
 			playerDetected = Physics2D.OverlapCircle(transform.position, playerCheckRadius, whatIsPlayer);
+			rigidbody2D.velocity = Vector2.zero;
 
 			if(playerDetected){
 				float angle = Mathf.Atan2(transform.position.y - playerDetected.transform.position.y, transform.position.x - playerDetected.transform.position.x);
