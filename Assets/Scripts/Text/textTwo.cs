@@ -11,7 +11,7 @@ public class textTwo : MonoBehaviour {
 	
 	bool Begin = false;
 	
-	string stringToEdit = "You: I did it!.. Bla bla";
+	string stringToEdit = "You: I did it! I got through the group rooms, safe and sound!";
 	
 	bool TextTwo = true;
 	bool TextTwoDone = false;
@@ -65,7 +65,7 @@ public class textTwo : MonoBehaviour {
 				
 				if(TextTwo)
 				{
-					stringToEdit = "Thanks for playing our game.. bla bla";
+					stringToEdit = "('Voice of the Creators'): Thanks for playing this, the first level of 'Doominions of Aaldor' - Stay tuned for future adventures, taking on the ravenous doominions of Aaldor, and eventually the biggest villain in this Milky Way Galaxy; The Doomlord of Aaldor, Genr Sral!";
 					Done ();
 				}
 				

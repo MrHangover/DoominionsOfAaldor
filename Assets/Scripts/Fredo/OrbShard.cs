@@ -18,8 +18,10 @@ public class OrbShard : Projectile { //OrbShard is a Projectile
 		if (other.gameObject.tag == "Enemy") {
 						dealDamage (other.gameObject, 1, false);
 						Slow (other.gameObject, 4f, 0.3f);
+			Destroy (this.gameObject); //Destroys the projectile upon impact
 				}
-		Destroy (this.gameObject); //Destroys the projectile upon impact
+
+
 	}
 
 	//As the Orb shard is a projectile, it needs additional info:

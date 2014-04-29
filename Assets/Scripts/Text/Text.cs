@@ -9,7 +9,7 @@ public class Text : MonoBehaviour {
 
 	bool Begin = false;
 
-	string stringToEdit = "Hello";
+	string stringToEdit = "Hello!";
 
 	bool TextTwo = true;
 	bool TextTwoDone = false;
@@ -73,19 +73,19 @@ public class Text : MonoBehaviour {
 
 				if(TextTwo)
 				{
-					stringToEdit = "page 1";			// changing the text showen to the player
+					stringToEdit = "Welcome to Doominions of Aaldor! The Dungeon Crawler game, certainly not based on Aalborg University!";			// changing the text showen to the player
 					Done ();							// calling the done function
 				}
 
 				if(TextThree)
 				{
-					stringToEdit = "page 2";
+					stringToEdit = "You're about to embark on a journey filled with danger, and therefore you must be prepared!";
 					Done ();
 				}
 
 				if(TextFour)
 				{
-					stringToEdit = "page 3";
+					stringToEdit = " First off, you move your character around, by using the 'WASD'-keys, give it a try!";
 					Done ();
 				}
 
