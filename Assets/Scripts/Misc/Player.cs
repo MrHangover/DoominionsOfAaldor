@@ -50,10 +50,10 @@ public abstract class Player : Creature {
 		if(slowDuration < Time.time)				//If the player shouldn't be slowed anymore,
 			slow = 1f;								//cancel any slow.
 
-		offensiveTrack = offensiveCD; //- Time.time;
-		movementTrack = movementCD; //- Time.time;
-		defensiveTrack = defensiveCD; //- Time.time;
-		ultTrack = ultCD; //- Time.time;
+		offensiveTrack = offensiveCD - Time.time;
+		movementTrack = movementCD - Time.time;
+		defensiveTrack = defensiveCD - Time.time;
+		ultTrack = ultCD - Time.time;
 	}
 
 	//Update will be overridden by other players, as they need to implement the abilities themselves, however this short amount of code was left here so you could always
