@@ -53,17 +53,21 @@ public class BlueMage : Player { //The class "BlueMage" is a "Player"
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButton("Normal"))
-			NormalAttack();
-		if(Input.GetButton("Offensive"))
-			OffensiveAbility();
-		if(Input.GetButton("Defensive"))
-			DefensiveAbility();
-		if(Input.GetButton("Speed"))
-			MovementAbility();
-		if(Input.GetButton("Ult"))
-			UltAbility(); //The buttons for the different spells - These are assigned on the "base" player class
 
+		if(!Speech)
+		{
+			if(Input.GetButton("Normal"))
+				NormalAttack();
+			if(Input.GetButton("Offensive"))
+				OffensiveAbility();
+			if(Input.GetButton("Defensive"))
+				DefensiveAbility();
+			if(Input.GetButton("Speed"))
+				MovementAbility();
+			if(Input.GetButton("Ult"))
+				UltAbility(); //The buttons for the different spells - These are assigned on the "base" player class
+		}
+				
 		animator.SetFloat("vSpeed", Mathf.Abs(moveV));
 		animator.SetFloat("hSpeed", Mathf.Abs(moveH));
 

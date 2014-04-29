@@ -45,10 +45,10 @@ public abstract class Player : Creature {
 		if(slowDuration < Time.time)
 			slow = 1f;
 
-		offensiveTrack = offensiveCD - Time.time;
-		movementTrack = movementCD - Time.time;
-		defensiveTrack = defensiveCD - Time.time;
-		ultTrack = ultCD - Time.time;
+		offensiveTrack = offensiveCD; //- Time.time;
+		movementTrack = movementCD; //- Time.time;
+		defensiveTrack = defensiveCD; //- Time.time;
+		ultTrack = ultCD; //- Time.time;
 
 
 
