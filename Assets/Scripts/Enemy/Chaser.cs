@@ -22,7 +22,7 @@ public class Chaser : Enemy {
 		if(other.gameObject.tag == "Player"){
 			dealDamage(other.gameObject, 7, true, 15);
 			float angle = Mathf.Atan2(transform.position.y - other.transform.position.y, transform.position.x - other.transform.position.x);
-			KnockBack(new Vector2(Mathf.Cos(angle) * 30f, Mathf.Sin(angle) * 30f));
+			KnockBack(new Vector2(Mathf.Cos(angle) * 15f, Mathf.Sin(angle) * 15f));
 		}
 	}
 
