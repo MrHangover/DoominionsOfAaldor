@@ -3,8 +3,8 @@ using System.Collections;
 
 public class BlueMage : Player { //The class "BlueMage" is a "Player"
 
-	Animator blueAnimator;
-	Animator[] animators; 
+	//Animator blueAnimator;
+	public Animator animator;
 	BoxCollider2D boxCollider2D;
 	public GameObject ultBlue;
 	float moveActiveTime = -1f;
@@ -45,10 +45,10 @@ public class BlueMage : Player { //The class "BlueMage" is a "Player"
 	// Use this for initialization
 	void Start () {
 		maxSpeed = 5f; //The starting "stats" for the bluemage - health, movement speed etc.
-		maxHealth = 60;
-		health = 60;
-		animators = GetComponentsInChildren<Animator>();
-		blueAnimator = animators[0];
+		maxHealth = 85;
+		health = 85;
+		animator = GetComponent<Animator>();
+		//blueAnimator = animator[0];
 	}
 	
 	// Update is called once per frame
@@ -63,6 +63,9 @@ public class BlueMage : Player { //The class "BlueMage" is a "Player"
 			MovementAbility();
 		if(Input.GetButton("Ult"))
 			UltAbility(); //The buttons for the different spells - These are assigned on the "base" player class
+
+		animator.SetFloat("vSpeed", Mathf.Abs(moveV));
+		animator.SetFloat("hSpeed", Mathf.Abs(moveH));
 
 		if(moveActiveTime >= Time.time){
 			maxSpeed = Mathf.Lerp(5f, 20f, (7f - (moveActiveTime - Time.time))/7f);
