@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/// <summary>
+/// Dirt spawn script.
+/// This script is used for spawning dirt particles behind the big yoyo which is spawned whenever the MrLink character uses
+/// his ult ability. It spawns dirt particles, and sends them flying in a direction based on the big yoyo's velocity and rotation.
+/// </summary>
+
+using UnityEngine;
 using System.Collections;
 
 public class DirtSpawnScript : MonoBehaviour {

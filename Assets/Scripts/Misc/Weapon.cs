@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿//<Summary>
+//Base class for all Weapons. A weapon is anything that should be able to interact with creatures, but 
+//doesn't collide with them. This class contains functions for dealing damage, reflecting projectiles, and
+//slowing. The script is extremely similar to the Projectile.cs script, so it won't be explained in detail here.
+//Read the comments in the Projectile.cs script instead.
+//</Summary>
+
+using UnityEngine;
 using System.Collections;
 
 public abstract class Weapon : MonoBehaviour {
