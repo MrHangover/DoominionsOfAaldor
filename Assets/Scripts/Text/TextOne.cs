@@ -73,7 +73,7 @@ public class TextOne : MonoBehaviour {
 				
 				if(TextThree)
 				{
-					stringToEdit = "Mastery Man (Voice Comm): Fight your way through campus, and reach the exit! Your hero have five abilities: Your basic attack (Space), your main offensive power (1), your defensive power (2), your movement-utility ability (3) and your ultimate ability (4)";
+					stringToEdit = "Mastery Man (Voice Comm): Fight your way through campus, and reach the exit!\n\nYour hero have five abilities:\nYour basic attack (Space)\nYour main offensive power (1)\nYour defensive power (2)\nYour movement-utility ability (3)\nYour ultimate ability (4)";
 					Done ();
 				}
 				

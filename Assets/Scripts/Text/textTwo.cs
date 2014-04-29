@@ -5,9 +5,10 @@ public class textTwo : MonoBehaviour {
 
 
 	// For comments see Text.cs
-
-	GameObject ActivePlayer;
+	
 	public string leveltoLoad;
+	
+	GameObject ActivePlayer;
 	
 	bool Begin = false;
 	
@@ -15,9 +16,16 @@ public class textTwo : MonoBehaviour {
 	
 	bool TextTwo = true;
 	bool TextTwoDone = false;
-
+	
+	bool TextThree = false;
+	bool TextThreeDone = false;
+	
+	bool TextFour = false;
+	bool TextFourDone = false;
 	
 	float NextTimer = -1f;
+	
+
 
 
 	// Use this for initialization
@@ -65,13 +73,21 @@ public class textTwo : MonoBehaviour {
 				
 				if(TextTwo)
 				{
-					stringToEdit = "('Voice of the Creators'): Thanks for playing this, the first level of 'Doominions of Aaldor' - Stay tuned for future adventures, taking on the ravenous doominions of Aaldor, and eventually the biggest villain in this Milky Way Galaxy; The Doomlord of Aaldor, Genr Sral!";
+					stringToEdit = "('Voice of the Creators'): Thanks for playing this, the first level of 'Doominions of Aaldor'!";
 					Done ();
 				}
 				
+				if(TextThree)
+				{
+					stringToEdit = "Stay tuned for future adventures, taking on the ravenous doominions of Aaldor, and eventually the biggest villain in this Milky Way Galaxy";
+					Done ();
+				}
 				
-				
-				
+				if(TextFour)
+				{
+					stringToEdit = "The Doomlord of Aaldor, Genr Sral!";
+					Done ();
+				}
 				
 			}
 			
@@ -91,7 +107,19 @@ public class textTwo : MonoBehaviour {
 		
 		if(TextTwo && TextTwoDone)
 		{
+			TextThree = true;
 			TextTwo = false;
+		}
+		
+		if(TextThree && TextThreeDone)
+		{
+			TextFour = true;
+			TextThree = false;
+		}
+		
+		if(TextFour && TextFourDone)
+		{
+			TextFour = false;
 			
 			Talk.Speechset();
 			Begin = false;
@@ -99,11 +127,6 @@ public class textTwo : MonoBehaviour {
 			GameObject.DestroyObject(gameObject);
 			Application.LoadLevel(leveltoLoad);
 		}
-		
-		
-		
-		
-		
 		
 		
 		
@@ -119,9 +142,17 @@ public class textTwo : MonoBehaviour {
 			TextTwoDone = true;
 		}
 		
+		if(TextThree && !TextThreeDone)
+		{
+			NextTimer = 0.00001f + Time.time;
+			TextThreeDone = true;
+		}
 		
-		
-		
+		if(TextFour && !TextFourDone)
+		{
+			NextTimer = 0.00001f + Time.time;
+			TextFourDone = true;
+		}
 		
 	}
 }

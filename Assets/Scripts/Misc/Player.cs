@@ -16,6 +16,12 @@ public abstract class Player : Creature {
 	public static bool UIMovementCD = false;
 	public static bool UIDefensiveCD = false;
 	public static bool UIUltCD = false;
+
+
+	public static float offensiveTrack;
+	public static float movementTrack;
+	public static float defensiveTrack;
+	public static float ultTrack;
 	
 	// Update is called once per frame
 	void FixedUpdate ()
@@ -38,6 +44,14 @@ public abstract class Player : Creature {
 
 		if(slowDuration < Time.time)
 			slow = 1f;
+
+		offensiveTrack = offensiveCD - Time.time;
+		movementTrack = movementCD - Time.time;
+		defensiveTrack = defensiveCD - Time.time;
+		ultTrack = ultCD - Time.time;
+
+
+
 	}
 
 	void Update ()
@@ -52,6 +66,9 @@ public abstract class Player : Creature {
 			MovementAbility();
 		if(Input.GetButton("Ult"))
 			UltAbility();
+
+
+
 	}
 
 	protected abstract void NormalAttack();

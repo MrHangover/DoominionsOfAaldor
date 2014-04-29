@@ -13,6 +13,14 @@ public abstract class Creature : MonoBehaviour {
 	protected float stunnedCD = 0f;
 	protected float immunityCD = 0f;
 	protected float knockBackCD = 0f;
+
+	public static int HealthTracker;
+
+	void FixedUpdate ()
+	{
+		HealthTracker = health;
+	}
+
 	
 	public void TakeDamage(int damage){
 		if(immunityCD < Time.time){
