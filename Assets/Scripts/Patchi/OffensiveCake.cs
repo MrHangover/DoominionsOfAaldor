@@ -75,9 +75,7 @@ public class OffensiveCake : Projectile {
 			dealDamage(other.gameObject, 50, true, 10);
 	}
 
-	protected override void OnTriggerEnter2D(Collider2D other){
-		
-	}
+
 
 
 }

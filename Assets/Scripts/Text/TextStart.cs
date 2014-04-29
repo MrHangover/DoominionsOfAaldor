@@ -8,16 +8,14 @@ public class TextStart : MonoBehaviour {
 	
 	bool Begin = false;
 	
-	string stringToEdit = "Hello this is test!";
+	string stringToEdit = "You: What a beutiful day.. bla bla";
 	
 	bool TextTwo = true;
 	bool TextTwoDone = false;
 	
-	bool TextThree = false;
-	bool TextThreeDone = false;
+
 	
-	bool TextFour = false;
-	bool TextFourDone = false;
+
 	
 	float NextTimer = -1f;
 
@@ -66,7 +64,7 @@ public class TextStart : MonoBehaviour {
 				
 				if(TextTwo)
 				{
-					stringToEdit = "page 1";
+					stringToEdit = "You: Ohh.. what was that bla bla bla";
 					Done ();
 				}
 				

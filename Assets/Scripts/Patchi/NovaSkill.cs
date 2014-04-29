@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NovaSkill : Projectile {
+public class NovaSkill : Weapon {
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +21,5 @@ public class NovaSkill : Projectile {
 			dealDamage(other.gameObject, 100, false, 0);
 	}
 
-	protected override void OnCollisionEnter2D(Collision2D other){
-		
-	}
+
 }

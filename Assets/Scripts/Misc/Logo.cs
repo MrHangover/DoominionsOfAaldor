@@ -8,6 +8,8 @@ public class Logo : MonoBehaviour {
 	void Start () {
 
 		GameObject.DestroyObject(gameObject,5);
+		Screen.lockCursor = false;
+		Screen.showCursor = true;
 	}
 	
 	// Update is called once per frame
