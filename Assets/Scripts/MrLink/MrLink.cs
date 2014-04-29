@@ -17,9 +17,9 @@ public class MrLink : Player {
 
 	// Use this for initialization
 	void Start () {
-		maxSpeed = 15f;
-		maxHealth = 60;
-		health = 60;
+		maxSpeed = 20f;
+		maxHealth = 80;
+		health = maxHealth;
 		animators = GetComponentsInChildren<Animator>();
 		yoAnimator = animators[1];
 		linkAnimator = animators[0];
@@ -39,12 +39,12 @@ public class MrLink : Player {
 			UltAbility();
 
 		if(ultActiveTime >= Time.time){
-			maxSpeed = Mathf.Lerp(0f, 50f, (15f - (ultActiveTime - Time.time))/15f);
+			maxSpeed = Mathf.Lerp(0f, 60f, (15f - (ultActiveTime - Time.time))/15f);
 		}
 
-		if(maxSpeed > 15f){
+		if(maxSpeed > 20f){
 			if(ultActiveTime < Time.time){
-				maxSpeed = 15f;
+				maxSpeed = 20f;
 				linkAnimator.SetBool("isUlting", false);
 			}
 		}
@@ -102,15 +102,15 @@ public class MrLink : Player {
 
 	protected override void OffensiveAbility(){
 		if(offensiveCD <= Time.time){
-			offensiveCD = Time.time + 4f;	
+			offensiveCD = Time.time + 2.5f;	
 			GameObject tele = Instantiate(teleYo, 
 			                              transform.position + new Vector3(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)), Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)), 0f) * 1.2f,
 			                              transform.rotation) as GameObject;
 			tele.rigidbody2D.AddForce(new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)), Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 400f
 			                          + rigidbody2D.velocity * 20f);
-			tele.rigidbody2D.AddTorque(10f);
+			tele.rigidbody2D.AddTorque(20f);
 			teleYos.Add(tele);
-			if(teleYos.Count > 5)
+			if(teleYos.Count > 8)
 				teleYos.RemoveAt(0);
 		}
 	}
@@ -142,7 +142,7 @@ public class MrLink : Player {
 		if(ultCD <= Time.time){
 			Stun(1f);
 			rigidbody2D.velocity = Vector2.zero;
-			ultCD = 90f + Time.time;
+			ultCD = 60f + Time.time;
 			ultActiveTime = 16f + Time.time;
 			immunityCD = 16f + Time.time;
 			knockBackCD = 16f + Time.time;

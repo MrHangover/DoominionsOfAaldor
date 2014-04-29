@@ -12,7 +12,7 @@ public class BigYoScript : Weapon {
 
 	protected override void OnTriggerEnter2D(Collider2D other){
 		if(other.gameObject.tag == "Enemy"){
-			dealDamage(other.gameObject, 10, true, 30);
+			dealDamage(other.gameObject, 15, true, 30);
 		}
 		else if (other.gameObject.tag == "EnemyProjectile"){
 			float angle = Mathf.Atan2(transform.position.y - other.transform.position.y, transform.position.x - other.transform.position.x);
