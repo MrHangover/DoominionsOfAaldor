@@ -51,7 +51,7 @@ public class MrLink : Player {
 
 		if(defStackTime <= Time.time && defStacks < 5){
 			defStacks++;
-			defStackTime = Time.time + 20f;
+			defStackTime = Time.time + 10f;
 		}
 
 		if(immunityCD > Time.time && ultActiveTime < Time.time)
@@ -69,7 +69,7 @@ public class MrLink : Player {
 			UIOffensiveCD = false;
 		}
 		
-		if(defensiveCD > Time.time)
+		if(defStacks == 0)
 		{
 			UIDefensiveCD = true;
 		} else {
