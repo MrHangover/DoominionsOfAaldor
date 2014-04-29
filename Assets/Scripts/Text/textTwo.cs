@@ -3,7 +3,9 @@ using System.Collections;
 
 public class textTwo : MonoBehaviour {
 
-	
+
+	// For comments see Text.cs
+
 	GameObject ActivePlayer;
 	public string leveltoLoad;
 	

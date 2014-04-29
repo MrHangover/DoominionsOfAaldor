@@ -3,7 +3,7 @@ using System.Collections;
 
 public class UI : MonoBehaviour {
 
-
+	// Declaration of the variables.
 
 	GameObject ActivePlayer;
 	
@@ -32,10 +32,13 @@ public class UI : MonoBehaviour {
 	{
 		if(Begin)
 		{
+			// This finds the active players and use its script
+
 			ActivePlayer = GameObject.FindWithTag("Player");
 			Player Timer = ActivePlayer.GetComponent<Player>();
 			
-		
+			// This changes string that the user see on the interface
+
 			if(Player.UIOffensiveCD)
 			{
 				offensive = "Cooldown";
@@ -70,8 +73,9 @@ public class UI : MonoBehaviour {
 
 		if(Begin)
 			{
+				// Creates text on the screen
 
-				GUILayout.BeginArea(new Rect(800,760,400,Screen.width / 2));
+				GUILayout.BeginArea(new Rect(800,760,400,Screen.width / 2));	// Begins the text area
 
 				GUILayout.BeginHorizontal();
 
@@ -96,6 +100,8 @@ public class UI : MonoBehaviour {
 
 				GUILayout.BeginHorizontal();
 				
+				// Creates boxes
+
 				GUILayout.BeginVertical();
 				GUI.Box(new Rect(0, 30, 80, 40), offensive);
 				GUILayout.EndVertical();
@@ -117,7 +123,7 @@ public class UI : MonoBehaviour {
 			
 				
 
-				GUILayout.EndArea();
+				GUILayout.EndArea();						// Ends the text area
 		}
 
 

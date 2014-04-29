@@ -8,12 +8,15 @@ public class Interface : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		PauseScreen.SetActive(false);
+		PauseScreen.SetActive(false);		// Setting a gameobejct to false
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+		// a pause button that stops time and brings up the pause screen and if pressed again it the pause and screen will be removed
+
+
 		if(Input.GetKeyDown(KeyCode.P))
 		{
 			if(Time.timeScale == 0f)
@@ -29,7 +32,7 @@ public class Interface : MonoBehaviour {
 
 		if(Input.GetKeyDown(KeyCode.Escape))
 		{
-			Application.Quit();
+			Application.Quit();					// Quit button
 		}
 	}
 }

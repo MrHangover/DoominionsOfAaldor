@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Select : MonoBehaviour {
 
+	// Declaration of the variables.
+
 	public GameObject Player;
 	public Transform SpawnPos;
 	public GameObject SelectObejct;
@@ -15,7 +17,7 @@ public class Select : MonoBehaviour {
 
 		Interface = GameObject.FindWithTag("UI");
 
-		Time.timeScale = 0f;
+		Time.timeScale = 0f;								// Sets the time gained every second by nothing
 	}
 	
 	// Update is called once per frame
@@ -28,10 +30,10 @@ public class Select : MonoBehaviour {
 		UI Begin = Interface.GetComponent<UI>();
 
 		GameObject Spawn = Instantiate(Player, SpawnPos.position, SpawnPos.rotation) as GameObject;
-		GameObject.Destroy (SelectObejct);
-		Begin.Begin = true;
-		Time.timeScale = 1f;
-		Screen.showCursor = false;
-		Screen.lockCursor = true;
+		GameObject.Destroy (SelectObejct);		
+		Begin.Begin = true;							// sends a bool to another script
+		Time.timeScale = 1f;						// changes the time gained back to normal
+		Screen.showCursor = false;					// hides the mouse
+		Screen.lockCursor = true;					// locks the mouse
 	}
 }

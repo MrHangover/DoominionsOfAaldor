@@ -4,6 +4,8 @@ using System.Collections;
 public class OffensiveCake : Projectile {
 	
 
+	// Declaration of the variables.
+
 	float TimeCake = -1f;
 
 	bool CakeFireOne = true;
@@ -20,17 +22,20 @@ public class OffensiveCake : Projectile {
 
 	// Use this for initialization
 	void Start () {
-		GameObject.DestroyObject(gameObject,0.52f);
-		TimeCake = 0.5f + Time.time;
+		GameObject.DestroyObject(gameObject,0.52f);		// Destory the object after 0.52f
+		TimeCake = 0.5f + Time.time;					// setting a timer for an if-statement in the update
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(TimeCake < Time.time)
 		{
+
+			// After 0.5f the cake will be destoryed and split into four pieces
+
 			if(CakeFireOne == true)
 			{
-			GameObject Cake = Instantiate(AttackCake, PosA.position, PosA.rotation) as GameObject;
+			GameObject Cake = Instantiate(AttackCake, PosA.position, PosA.rotation) as GameObject;						// Same method as in the Patchi Script
 			Cake.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 45f) * (Mathf.PI / 180f)),
 			                                        Mathf.Sin((transform.eulerAngles.z + 45f) * (Mathf.PI / 180f))) * 3f;
 				CakeFireOne = false;
@@ -66,7 +71,7 @@ public class OffensiveCake : Projectile {
 
 	protected override void OnCollisionEnter2D(Collision2D other){
 		if(other.gameObject.tag == "Enemy")
-			dealDamage(other.gameObject, 50, true, 10);
+			dealDamage(other.gameObject, 50, true, 10);					// If an enemy gets hit it will take damage and knockback
 	}
 }
 

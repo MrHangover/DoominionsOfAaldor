@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TextOne : MonoBehaviour {
 
-
+	// For comments see Text.cs
 	
 	GameObject ActivePlayer;
 	

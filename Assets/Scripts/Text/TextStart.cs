@@ -3,7 +3,8 @@ using System.Collections;
 
 public class TextStart : MonoBehaviour {
 
-	
+	// For comments see Text.cs
+
 	GameObject ActivePlayer;
 	
 	bool Begin = false;
