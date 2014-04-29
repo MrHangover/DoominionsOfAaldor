@@ -19,4 +19,6 @@ public class BigYoScript : Weapon {
 			reflectProjectile(other.gameObject, new Vector2(Mathf.Cos(angle) * -50f, Mathf.Sin(angle) * -50f));
 		}
 	}
+
+
 }

@@ -71,7 +71,7 @@ public class OffensiveCake : Projectile {
 
 	protected override void OnCollisionEnter2D(Collision2D other){
 		if(other.gameObject.tag == "Enemy")
-			dealDamage(other.gameObject, 50, true, 10);					// If an enemy gets hit it will take damage and knockback
+			dealDamage(other.gameObject, 20, true, 10);					// If an enemy gets hit it will take damage and knockback
 	}
 }
 

@@ -114,19 +114,19 @@ public class Patchi : Player {
 	// Adding time to the CD tracker
 
 	void CDAttackCake() {
-		normalCD = 0.5f + Time.time;	// adding time to the spell only can be used every 0.5f
+		normalCD = 0.4f + Time.time;	// adding time to the spell only can be used every 0.5f
 
 		return;
 	}
 
 	void CDDefBall() {
-		defensiveCD = 5.0f + Time.time;
+		defensiveCD = 3.0f + Time.time;
 		
 		return;
 	}
 
 	void CDAttackSpell() {
-		offensiveCD = 5.0f + Time.time;
+		offensiveCD = 2.0f + Time.time;
 		
 		return;
 	}
