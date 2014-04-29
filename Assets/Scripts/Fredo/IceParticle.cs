@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IceParticle : MonoBehaviour {
+public class IceParticle : MonoBehaviour { //IceParticle is a MonoBehaviour
 	
-	public GameObject PlayerF;
+
 	
 	// Use this for initialization
 	void Start () {
-		GameObject.DestroyObject(gameObject,0.05f);
-
+		GameObject.DestroyObject(gameObject,0.3f);
+		//The particles will despawn after 0.3 seconds
 
 		
-		Player script = PlayerF.GetComponent<Player>();
+
 		
 		
 	}
@@ -21,6 +21,7 @@ public class IceParticle : MonoBehaviour {
 
 
 		transform.Rotate(0, 0, 10);
+		// The particles rotates
 		
 		
 		

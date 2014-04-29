@@ -22,8 +22,9 @@ public class HailShard : Projectile { //HailShard is a Projectile
 		if (other.gameObject.tag == "Enemy") {
 						dealDamage (other.gameObject, 3, true, 5);
 						Slow (other.gameObject, 1.5f, 0.75f);
+			Destroy (this.gameObject); //Destroys the projectile upon impact
 				}
-		Destroy (this.gameObject); //Destroys the projectile upon impact
+
 	}
 	//As the hailshard is a projectile, it needs additional info:
 	//It targets objects of type "Enemy"

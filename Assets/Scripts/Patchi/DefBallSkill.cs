@@ -7,7 +7,7 @@ public class DefBallSkill : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GameObject.DestroyObject(gameObject,3);
+		GameObject.DestroyObject(gameObject,3); // Obejct gets destoryed after 3f
 
 	}
 	

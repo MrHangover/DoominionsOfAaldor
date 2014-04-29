@@ -8,7 +8,7 @@ public class Spawn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GameObject Start = Instantiate(Spawning, SpawnPos.position, SpawnPos.rotation) as GameObject;
+		GameObject Start = Instantiate(Spawning, SpawnPos.position, SpawnPos.rotation) as GameObject; // Spawns the Char select
 	}
 	
 	// Update is called once per frame

@@ -3,11 +3,13 @@ using System.Collections;
 
 public class Text : MonoBehaviour {
 
+	// Declaration of the variables.
+
 	GameObject ActivePlayer;
 
 	bool Begin = false;
 
-	string stringToEdit = "Hello";
+	string stringToEdit = "Hello!";
 
 	bool TextTwo = true;
 	bool TextTwoDone = false;
@@ -31,17 +33,20 @@ public class Text : MonoBehaviour {
 	
 	}
 
+
+
+
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		ActivePlayer = GameObject.FindWithTag("Player");
-		Player Talk = ActivePlayer.GetComponent<Player>();
+		ActivePlayer = GameObject.FindWithTag("Player");			// Finds the player
+		Player Talk = ActivePlayer.GetComponent<Player>();			// Get the player script
 
 		if(other.gameObject.tag == "Player")
 		{
-			Talk.Speechset();
+			Talk.Speechset();										// Triggers the Speechset function in the player script 
 			Begin = true;
 			NextTimer = 100f + Time.time;
-			Time.timeScale = 0.00006f;
+			Time.timeScale = 0.00006f;								// Slows down the time
 		}
 
 	}
@@ -52,33 +57,35 @@ public class Text : MonoBehaviour {
 		{
 
 		
-			stringToEdit = GUI.TextField(new Rect(580, 500, 800, 200), stringToEdit, 2000);
+			stringToEdit = GUI.TextField(new Rect(580, 500, 800, 200), stringToEdit, 2000);		// Creates a text field
 
 
+
+			// This system is based on the Time.time and is used to create a text system so the player can change page by using the input button
 
 			if(Input.GetButtonUp("Normal"))
 			{
 
-				if (NextTimer < Time.time)
+				if (NextTimer < Time.time)				// Timer to stop the function to stop the function on every page
 					Next ();
 
 
 
 				if(TextTwo)
 				{
-					stringToEdit = "page 1";
-					Done ();
+					stringToEdit = "Welcome to Doominions of Aaldor! The Dungeon Crawler game, certainly not based on Aalborg University!";			// changing the text showen to the player
+					Done ();							// calling the done function
 				}
 
 				if(TextThree)
 				{
-					stringToEdit = "page 2";
+					stringToEdit = "You're about to embark on a journey filled with danger, and therefore you must be prepared!";
 					Done ();
 				}
 
 				if(TextFour)
 				{
-					stringToEdit = "page 3";
+					stringToEdit = " First off, you move your character around, by using the 'WASD'-keys, give it a try!";
 					Done ();
 				}
 
@@ -94,6 +101,8 @@ public class Text : MonoBehaviour {
 	}
 
 	void Next(){
+
+		// This function controlls what pages that are active
 
 		ActivePlayer = GameObject.FindWithTag("Player");
 		Player Talk = ActivePlayer.GetComponent<Player>();
@@ -127,6 +136,7 @@ public class Text : MonoBehaviour {
 
 	void Done(){
 
+		// This function makes sure that a small cooldown is created so it wont run though all the pages at once
 
 		if(TextTwo && !TextTwoDone)
 		{

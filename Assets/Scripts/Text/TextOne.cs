@@ -3,13 +3,13 @@ using System.Collections;
 
 public class TextOne : MonoBehaviour {
 
-
+	// For comments see Text.cs
 	
 	GameObject ActivePlayer;
 	
 	bool Begin = false;
 	
-	string stringToEdit = "Mystery Man: Stop right there bla bla";
+	string stringToEdit = "Mystery Man (Voice Comm): Stop right there! The area ahead has been infested by the Doominions of Aaldor!";
 	
 	bool TextTwo = true;
 	bool TextTwoDone = false;
@@ -67,19 +67,19 @@ public class TextOne : MonoBehaviour {
 				
 				if(TextTwo)
 				{
-					stringToEdit = "You: What wrong bla bla";
+					stringToEdit = "You: Doominions of Aaldor!? What can I do to help?";
 					Done ();
 				}
 				
 				if(TextThree)
 				{
-					stringToEdit = "Mastery Man: Bla bla bla";
+					stringToEdit = "Mastery Man (Voice Comm): Fight your way through campus, and reach the exit!\n\nYour hero have five abilities:\nYour basic attack (Space)\nYour main offensive power (1)\nYour defensive power (2)\nYour movement-utility ability (3)\nYour ultimate ability (4)";
 					Done ();
 				}
 				
 				if(TextFour)
 				{
-					stringToEdit = "You: I will fight my way out.. bla bla.. og mere bla";
+					stringToEdit = "You: I will succeed in my mission! Or die programming!";
 					Done ();
 				}
 				

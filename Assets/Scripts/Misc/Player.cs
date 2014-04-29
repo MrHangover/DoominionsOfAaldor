@@ -22,8 +22,11 @@ public abstract class Player : Creature {
 	public static bool UIMovementCD = false;
 	public static bool UIDefensiveCD = false;
 	public static bool UIUltCD = false;
-	public static bool facingRight = true;
 	public static bool Speech;
+	public static float offensiveTrack;
+	public static float movementTrack;
+	public static float defensiveTrack;
+	public static float ultTrack;
 	
 	// Update is called once per frame
 	void FixedUpdate ()
@@ -43,9 +46,14 @@ public abstract class Player : Creature {
 
 		if(!canMove && stunnedCD < Time.time)		//If the player can't move, but should be able to,
 			canMove = true;							//allow the player to move.
-
+		
 		if(slowDuration < Time.time)				//If the player shouldn't be slowed anymore,
 			slow = 1f;								//cancel any slow.
+
+		offensiveTrack = offensiveCD; //- Time.time;
+		movementTrack = movementCD; //- Time.time;
+		defensiveTrack = defensiveCD; //- Time.time;
+		ultTrack = ultCD; //- Time.time;
 	}
 
 	//Update will be overridden by other players, as they need to implement the abilities themselves, however this short amount of code was left here so you could always
@@ -62,6 +70,9 @@ public abstract class Player : Creature {
 			MovementAbility();
 		if(Input.GetButton("Ult"))
 			UltAbility();
+
+
+
 	}
 
 	//Abstract functions must be implemented in all scripts that extends the player. This ensures that all players has abilities implemented.

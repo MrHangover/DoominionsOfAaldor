@@ -2,11 +2,14 @@
 using System.Collections;
 
 public class Patchi : Player {
-	
-	public Animator animator;
 
-	float SpeedTime = 0;
-	float UltTime = 0;
+
+	// Declaration of the variables.
+
+	Animator animator;
+
+	float SpeedTime = 0;	
+	float UltTime = 0;		
 
 	public GameObject DefBall;
 	public Transform DefBallPos;
@@ -24,9 +27,11 @@ public class Patchi : Player {
 	// Use this for initialization
 	void Start () {
 
-		maxSpeed = 15f;
-		maxHealth = 50;
-		health = 50;
+		// Setting up health and speed from player, setting speech to false and getting the animator
+
+		maxSpeed = 5f;
+		maxHealth = 100;
+		health = 100;
 
 		Speech = false;
 
@@ -37,18 +42,22 @@ public class Patchi : Player {
 	// Update is called once per frame
 	void Update () {
 
-		animator.SetFloat("vSpeed", Mathf.Abs(moveV));
-		animator.SetFloat("hSpeed", Mathf.Abs(moveH));
+		// Sending information about if i walk up/down or left/right
+
+		animator.SetFloat("vSpeed", Mathf.Abs(moveV));	// sending moveV values into vSpeed getting the values from player script
+		animator.SetFloat("hSpeed", Mathf.Abs(moveH));	// sending moveH values into HSpeed getting the values from player script
 		
 
 		if(SpeedTime < Time.time && UltTime < Time.time )
 		{
-			maxSpeed = 5f;
+			maxSpeed = 5f; // After speed increase and ult stun the speed will be set to 5f
 		}
 
 		if(!Speech)
 		{
 		
+		// Inputs that starts the named function
+
 		if(Input.GetButton("Normal"))
 			NormalAttack();
 
@@ -64,6 +73,8 @@ public class Patchi : Player {
 		if(Input.GetButton("Ult"))
 			UltAbility();
 		
+
+		// Setting Cooldowns
 		
 		if(offensiveCD > Time.time)
 		{
@@ -100,21 +111,22 @@ public class Patchi : Player {
 		
 	}
 
+	// Adding time to the CD tracker
 
 	void CDAttackCake() {
-		normalCD = 0.5f + Time.time;
+		normalCD = 0.4f + Time.time;	// adding time to the spell only can be used every 0.5f
 
 		return;
 	}
 
 	void CDDefBall() {
-		defensiveCD = 5.0f + Time.time;
+		defensiveCD = 3.0f + Time.time;
 		
 		return;
 	}
 
 	void CDAttackSpell() {
-		offensiveCD = 5.0f + Time.time;
+		offensiveCD = 2.0f + Time.time;
 		
 		return;
 	}
@@ -143,31 +155,37 @@ public class Patchi : Player {
 		return;
 	}
 
+	// a function that fires the normal attack.. spawns a piece of cake :D
+
 	protected override void NormalAttack(){
 
 		if(normalCD < Time.time)
 		{
-			GameObject Cake = Instantiate(AttackCake, AttackCakePos.position, AttackCakePos.rotation) as GameObject;
-			Cake.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
+			GameObject Cake = Instantiate(AttackCake, AttackCakePos.position, AttackCakePos.rotation) as GameObject; // spawns the gameobejct by the assigned position and rotation
+			Cake.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),	// adding force to the spawned object based on the rotation from sin and cos
 			                                        Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 15f;
 			CDAttackCake();
 		}
 
 	}
 
+	// a function that spawns a larger cake that splits into smaller pieces :D
+
 	protected override void OffensiveAbility(){
 
 		if(offensiveCD < Time.time)
 		{
 			CDAttackSpell();
-			GameObject Attack = Instantiate(AttackBall, AttackBallPos.position, AttackBallPos.rotation) as GameObject;
+			GameObject Attack = Instantiate(AttackBall, AttackBallPos.position, AttackBallPos.rotation) as GameObject; // Same as above
 			Attack.rigidbody2D.velocity = new Vector2(Mathf.Cos((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f)),
 			                                          Mathf.Sin((transform.eulerAngles.z + 90f) * (Mathf.PI / 180f))) * 6f;
 
 		}
 
 	}
-	
+
+	// a function that spawns a ball that the player can hide behind. 
+
 	protected override void DefensiveAbility(){
 
 		if(defensiveCD < Time.time)
@@ -177,18 +195,22 @@ public class Patchi : Player {
 		}
 
 	}
-	
+
+	// a function that increase the players movement speed
+
 	protected override void MovementAbility(){
 
 		if(movementCD < Time.time && UltTime < Time.time)
 		{
-			maxSpeed = 15f;
+			maxSpeed = 10f;
 			SpeedTimer();
 			CDSpeed();
 		}
 
 	}
-	
+
+	 // a function that spawns a nova around the player
+
 	protected override void UltAbility(){
 
 		if (ultCD < Time.time)

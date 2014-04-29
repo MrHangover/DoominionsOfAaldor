@@ -3,12 +3,12 @@ using System.Collections;
 
 public class BlueMage : Player { //The class "BlueMage" is a "Player"
 
-	Animator blueAnimator;
-	Animator[] animators; 
+	//Animator blueAnimator;
+	public Animator animator;
 	BoxCollider2D boxCollider2D;
 	public GameObject ultBlue;
 	float moveActiveTime = -1f;
-	float AttackIceCD = 0;
+//	float AttackIceCD = 0;
 	//The various animators, boxcolliders and variables used throughout the script
 
 
@@ -45,24 +45,31 @@ public class BlueMage : Player { //The class "BlueMage" is a "Player"
 	// Use this for initialization
 	void Start () {
 		maxSpeed = 5f; //The starting "stats" for the bluemage - health, movement speed etc.
-		maxHealth = 60;
-		health = 60;
-		animators = GetComponentsInChildren<Animator>();
-		blueAnimator = animators[0];
+		maxHealth = 85;
+		health = 85;
+		animator = GetComponent<Animator>();
+		//blueAnimator = animator[0];
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButton("Normal"))
-			NormalAttack();
-		if(Input.GetButton("Offensive"))
-			OffensiveAbility();
-		if(Input.GetButton("Defensive"))
-			DefensiveAbility();
-		if(Input.GetButton("Speed"))
-			MovementAbility();
-		if(Input.GetButton("Ult"))
-			UltAbility(); //The buttons for the different spells - These are assigned on the "base" player class
+
+		if(!Speech)
+		{
+			if(Input.GetButton("Normal"))
+				NormalAttack();
+			if(Input.GetButton("Offensive"))
+				OffensiveAbility();
+			if(Input.GetButton("Defensive"))
+				DefensiveAbility();
+			if(Input.GetButton("Speed"))
+				MovementAbility();
+			if(Input.GetButton("Ult"))
+				UltAbility(); //The buttons for the different spells - These are assigned on the "base" player class
+		}
+				
+		animator.SetFloat("vSpeed", Mathf.Abs(moveV));
+		animator.SetFloat("hSpeed", Mathf.Abs(moveH));
 
 		if(moveActiveTime >= Time.time){
 			maxSpeed = Mathf.Lerp(5f, 20f, (7f - (moveActiveTime - Time.time))/7f);
@@ -116,8 +123,8 @@ public class BlueMage : Player { //The class "BlueMage" is a "Player"
 
 	private void IcePart(){
 		GameObject IceParticle = Instantiate(icePart, icePartPos.position + new Vector3(Random.Range(-0.9f, 0.9f), Random.Range(-0.9f, 0.9f), 0), icePartPos.rotation) as GameObject;
-		IceParticle.rigidbody2D.AddForce(transform.parent.transform.parent.rigidbody2D.velocity * 8f + 
-		                         new Vector2(Mathf.Cos((transform.eulerAngles.z - 90f) * (Mathf.PI / 180f)), Mathf.Sin((transform.eulerAngles.z - 90f) * (Mathf.PI / 180f))) * 100f);
+	/*	IceParticle.rigidbody2D.AddForce(transform.parent.transform.parent.rigidbody2D.velocity * 8f + 
+		                         new Vector2(Mathf.Cos((transform.eulerAngles.z - 90f) * (Mathf.PI / 180f)), Mathf.Sin((transform.eulerAngles.z - 90f) * (Mathf.PI / 180f))) * 100f);*/
 		} //This is the function called by the movementspeed ability to generate small ice particles around the player, in a random pattern
 
 	protected override void NormalAttack(){

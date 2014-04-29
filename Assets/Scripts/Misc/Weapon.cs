@@ -14,6 +14,7 @@ public abstract class Weapon : MonoBehaviour {
 	
 	protected abstract void OnTriggerEnter2D(Collider2D other);
 	
+
 	protected void dealDamage(GameObject player, int damage, bool isKnockBacking, int knockBackForce = 0){
 		if(damageCD < Time.time){
 			Creature playerScript = player.GetComponent<Creature>();

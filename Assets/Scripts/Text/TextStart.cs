@@ -3,21 +3,27 @@ using System.Collections;
 
 public class TextStart : MonoBehaviour {
 
-	
+	// For comments see Text.cs
+
 	GameObject ActivePlayer;
 	
 	bool Begin = false;
 	
-	string stringToEdit = "You: What a beutiful day.. bla bla";
+	string stringToEdit = "Hello!";
 	
 	bool TextTwo = true;
 	bool TextTwoDone = false;
 	
-
+	bool TextThree = false;
+	bool TextThreeDone = false;
 	
-
+	bool TextFour = false;
+	bool TextFourDone = false;
 	
 	float NextTimer = -1f;
+	
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -64,13 +70,21 @@ public class TextStart : MonoBehaviour {
 				
 				if(TextTwo)
 				{
-					stringToEdit = "You: Ohh.. what was that bla bla bla";
+					stringToEdit = "Welcome to Doominions of Aaldor! The Dungeon Crawler game, certainly not based on Aalborg University!";
 					Done ();
 				}
 				
-			
+				if(TextThree)
+				{
+					stringToEdit = "You're about to embark on a journey filled with danger, and therefore you must be prepared!";
+					Done ();
+				}
 				
-			
+				if(TextFour)
+				{
+					stringToEdit = "First off, you move your character around, by using the 'WASD'-keys, give it a try!";
+					Done ();
+				}
 				
 			}
 			
@@ -90,18 +104,25 @@ public class TextStart : MonoBehaviour {
 		
 		if(TextTwo && TextTwoDone)
 		{
+			TextThree = true;
 			TextTwo = false;
-
+		}
+		
+		if(TextThree && TextThreeDone)
+		{
+			TextFour = true;
+			TextThree = false;
+		}
+		
+		if(TextFour && TextFourDone)
+		{
+			TextFour = false;
+			
 			Talk.Speechset();
 			Begin = false;
 			Time.timeScale = 1f;
 			GameObject.DestroyObject(gameObject);
 		}
-
-		
-
-		
-	
 		
 		
 		
@@ -117,9 +138,17 @@ public class TextStart : MonoBehaviour {
 			TextTwoDone = true;
 		}
 		
-	
+		if(TextThree && !TextThreeDone)
+		{
+			NextTimer = 0.00001f + Time.time;
+			TextThreeDone = true;
+		}
 		
-	
+		if(TextFour && !TextFourDone)
+		{
+			NextTimer = 0.00001f + Time.time;
+			TextFourDone = true;
+		}
 		
 	}
 }
