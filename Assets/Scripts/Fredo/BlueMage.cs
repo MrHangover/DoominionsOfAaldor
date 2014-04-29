@@ -8,7 +8,7 @@ public class BlueMage : Player { //The class "BlueMage" is a "Player"
 	BoxCollider2D boxCollider2D;
 	public GameObject ultBlue;
 	float moveActiveTime = -1f;
-	float AttackIceCD = 0;
+//	float AttackIceCD = 0;
 	//The various animators, boxcolliders and variables used throughout the script
 
 
@@ -119,8 +119,8 @@ public class BlueMage : Player { //The class "BlueMage" is a "Player"
 
 	private void IcePart(){
 		GameObject IceParticle = Instantiate(icePart, icePartPos.position + new Vector3(Random.Range(-0.9f, 0.9f), Random.Range(-0.9f, 0.9f), 0), icePartPos.rotation) as GameObject;
-		IceParticle.rigidbody2D.AddForce(transform.parent.transform.parent.rigidbody2D.velocity * 8f + 
-		                         new Vector2(Mathf.Cos((transform.eulerAngles.z - 90f) * (Mathf.PI / 180f)), Mathf.Sin((transform.eulerAngles.z - 90f) * (Mathf.PI / 180f))) * 100f);
+	/*	IceParticle.rigidbody2D.AddForce(transform.parent.transform.parent.rigidbody2D.velocity * 8f + 
+		                         new Vector2(Mathf.Cos((transform.eulerAngles.z - 90f) * (Mathf.PI / 180f)), Mathf.Sin((transform.eulerAngles.z - 90f) * (Mathf.PI / 180f))) * 100f);*/
 		} //This is the function called by the movementspeed ability to generate small ice particles around the player, in a random pattern
 
 	protected override void NormalAttack(){
