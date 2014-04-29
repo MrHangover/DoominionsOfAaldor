@@ -27,8 +27,4 @@ public class TeleYo : Projectile {
 		if(other.gameObject.tag == "Enemy")
 			dealDamage(other.gameObject, 10, true, 12);
 	}
-
-	protected override void OnTriggerEnter2D(Collider2D other){
-		
-	}
 }

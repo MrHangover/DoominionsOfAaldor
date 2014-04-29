@@ -74,11 +74,5 @@ public class OffensiveCake : Projectile {
 		if(other.gameObject.tag == "Enemy")
 			dealDamage(other.gameObject, 50, true, 10);
 	}
-
-	protected override void OnTriggerEnter2D(Collider2D other){
-		
-	}
-
-
 }
 

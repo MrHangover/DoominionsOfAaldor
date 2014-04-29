@@ -26,10 +26,4 @@ public class IceShard: Projectile {
 			dealDamage(other.gameObject, 4, true, 2);
 			Slow(other.gameObject,3f, 0.5f);
 	}
-
-	protected override void OnTriggerEnter2D(Collider2D other){
-		
-	}
-
-
 }

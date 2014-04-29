@@ -27,8 +27,4 @@ public class NovaShard : Projectile {
 			//Slow(other.gameObject,3f, 0.5f);
 			//Slow(other.gameObject,4.5f, 0.25f);
 	}
-
-	protected override void OnTriggerEnter2D(Collider2D other){
-		
-	}
 }

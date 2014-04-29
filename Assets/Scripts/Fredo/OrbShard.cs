@@ -25,8 +25,4 @@ public class OrbShard : Projectile {
 			dealDamage(other.gameObject, 1, false);
 			Slow(other.gameObject,4f, 0.3f);
 	}
-
-	protected override void OnTriggerEnter2D(Collider2D other){
-		
-	}
 }
