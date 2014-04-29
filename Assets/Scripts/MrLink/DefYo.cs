@@ -14,7 +14,7 @@ public class DefYo : Weapon {
 	// Update is called once per frame
 	void FixedUpdate () {
 		transform.position = player.transform.position + new Vector3(Mathf.Cos(rot), Mathf.Sin(rot), 0f) * 2f;
-		rot += Time.deltaTime * 15f;
+		rot += Time.deltaTime * 20f;
 	}
 
 	protected override void OnTriggerEnter2D(Collider2D other){
@@ -23,7 +23,7 @@ public class DefYo : Weapon {
 			reflectProjectile(other.gameObject, new Vector2(Mathf.Cos(angle) * -30f, Mathf.Sin(angle) * -30f));
 		}
 		if(other.gameObject.tag == "Enemy"){
-			dealDamage(other.gameObject, 2, true, 20);
+			dealDamage(other.gameObject, 5, true, 20);
 		}
 	}
 }
