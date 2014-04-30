@@ -90,7 +90,7 @@ public class UI : MonoBehaviour {
 				if(Player.UIDefensiveCD)
 				{
 					GUILayout.BeginVertical();
-					GUI.Box(new Rect(100, 30, 80, 40), Player.movementTrack.ToString("0.0"));
+					GUI.Box(new Rect(100, 30, 80, 40), Player.defensiveTrack.ToString("0.0"));
 					GUILayout.EndVertical();
 				} else {
 					GUILayout.BeginVertical();
@@ -101,7 +101,7 @@ public class UI : MonoBehaviour {
 				if(Player.UIMovementCD)
 				{
 					GUILayout.BeginVertical();
-					GUI.Box(new Rect(200, 30, 80, 40), Player.defensiveTrack.ToString("0.0"));
+					GUI.Box(new Rect(200, 30, 80, 40), Player.movementTrack.ToString("0.0"));
 					GUILayout.EndVertical();
 				} else {
 					GUILayout.BeginVertical();
