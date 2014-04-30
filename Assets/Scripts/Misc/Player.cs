@@ -18,19 +18,21 @@ public abstract class Player : Creature {
 	protected float movementCD = -1f;
 	protected float defensiveCD = -1f;
 	protected float ultCD = -1f;
-	public static bool UIOffensiveCD = false;
-	public static bool UIMovementCD = false;
-	public static bool UIDefensiveCD = false;
-	public static bool UIUltCD = false;
-	public static bool Speech;
-	public static float offensiveTrack;
-	public static float movementTrack;
-	public static float defensiveTrack;
-	public static float ultTrack;
+	public bool UIOffensiveCD = false;
+	public bool UIMovementCD = false;
+	public bool UIDefensiveCD = false;
+	public bool UIUltCD = false;
+	public bool Speech;
+	public float offensiveTrack;
+	public float movementTrack;
+	public float defensiveTrack;
+	public float ultTrack;
 	
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
+		HealthTracker = health;
+
 		moveH = Input.GetAxis ("Horizontal");		//Takes input from the horizontal axis (buttons A and D)
 		moveV = Input.GetAxis ("Vertical");			//Takes input from the vertical axis (buttons W and S)
 
@@ -70,9 +72,6 @@ public abstract class Player : Creature {
 			MovementAbility();
 		if(Input.GetButton("Ult"))
 			UltAbility();
-
-
-
 	}
 
 	//Abstract functions must be implemented in all scripts that extends the player. This ensures that all players has abilities implemented.

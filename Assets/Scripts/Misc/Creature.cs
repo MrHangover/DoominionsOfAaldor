@@ -19,14 +19,7 @@ public abstract class Creature : MonoBehaviour { //Class is abstract as it is us
 	protected float stunnedCD = 0f;
 	protected float immunityCD = 0f;
 	protected float knockBackCD = 0f;
-
-	public static int HealthTracker;
-
-	void FixedUpdate ()
-	{
-		HealthTracker = health;
-	}
-
+	public int HealthTracker;
 	
 	public void TakeDamage(int damage){		//Function for taking damage or gaining health. It's public so other scripts can call it.
 		if(immunityCD < Time.time){			//Can only take damage when the creature isn't immune.
