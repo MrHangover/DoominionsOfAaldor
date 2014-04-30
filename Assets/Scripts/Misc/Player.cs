@@ -27,7 +27,8 @@ public abstract class Player : Creature {
 	public float movementTrack;
 	public float defensiveTrack;
 	public float ultTrack;
-	
+	public bool win = false;
+
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
@@ -92,5 +93,11 @@ public abstract class Player : Creature {
 		} else {
 			Speech = false;
 		}
+	}
+
+	void OnDestroy(){
+
+		if(!win)
+			Application.LoadLevel(2);
 	}
 }

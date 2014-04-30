@@ -79,7 +79,7 @@ public class textTwo : MonoBehaviour {
 				
 				if(TextThree)
 				{
-					stringToEdit = "Stay tuned for future adventures, taking on the ravenous doominions of Aaldor, and eventually the biggest villain in this Milky Way Galaxy";
+					stringToEdit = "Stay tuned for future adventures, taking on the ravenous doominions of Aaldor\nand eventually the biggest villain in this Milky Way Galaxy";
 					Done ();
 				}
 				
@@ -124,6 +124,7 @@ public class textTwo : MonoBehaviour {
 			Talk.Speechset();
 			Begin = false;
 			Time.timeScale = 1f;
+			Talk.win = true;
 			GameObject.DestroyObject(gameObject);
 			Application.LoadLevel(leveltoLoad);
 		}

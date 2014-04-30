@@ -1,8 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\UI.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Text\textTwo.cs">
     <Files>
-      <File FileName="Assets\Scripts\UI\UI.cs" Line="106" Column="41" />
+      <File FileName="Assets\Scripts\Misc\Player.cs" Line="30" Column="25" />
+      <File FileName="Assets\Scripts\Patchi\Patchi.cs" Line="194" Column="1" />
+      <File FileName="Assets\Scripts\Misc\Player.cs" Line="30" Column="25" />
+      <File FileName="Assets\Scripts\Text\textTwo.cs" Line="82" Column="101" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -5,6 +5,12 @@ public class UI : MonoBehaviour {
 
 	// Declaration of the variables.
 
+
+	float originalWidth = 1920.0f;  // define here the original resolution
+	float originalHeight = 1080.0f; // you used to create the GUI contents 
+	Vector3 scale;
+
+
 	Player playerScript;
 	GameObject player;
 	bool foundPlayer = false;
@@ -35,13 +41,26 @@ public class UI : MonoBehaviour {
 	}
 
 	void OnGUI() {
+
+		scale.y = Screen.height/originalHeight; // calculate vert scale
+		
+		scale.x = scale.y; // this will keep your ratio base on Vertical scale
+		
+		scale.z = 1;
+		
+		float scaleX = Screen.width/originalWidth; // store this for translate
+		
+		Matrix4x4 svMat = GUI.matrix; // save current matrix // substitute matrix - only scale is altered from standard
+		
+		GUI.matrix = Matrix4x4.TRS(new Vector3( (scaleX - scale.y) / 2 * originalWidth, 0, 0), Quaternion.identity, scale);;
+
 		if(Begin && playerScript)
 		{
 			// Health watcher
-			GUI.Box(new Rect(10, 30, 80, 40), playerScript.HealthTracker.ToString());
+			GUI.Box(new Rect(0, 30, 80, 40), playerScript.HealthTracker.ToString());
 
 			// Creates text on the screen
-			GUILayout.BeginArea(new Rect(800,760,400,Screen.width / 2));	// Begins the text area
+			GUILayout.BeginArea(new Rect(800,1000,400,Screen.width / 2));	// Begins the text area
 
 			GUILayout.BeginHorizontal();
 
@@ -114,5 +133,7 @@ public class UI : MonoBehaviour {
 			GUILayout.EndHorizontal();
 			GUILayout.EndArea();						// Ends the text area
 		}
+
+
 	}
 }

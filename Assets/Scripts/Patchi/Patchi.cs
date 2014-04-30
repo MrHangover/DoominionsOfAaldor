@@ -7,6 +7,7 @@ public class Patchi : Player {
 	// Declaration of the variables.
 
 	Animator animator;
+	
 
 	float SpeedTime = 0;	
 	float UltTime = 0;		
@@ -222,5 +223,6 @@ public class Patchi : Player {
 		}
 
 	}
+	
 
 }
